@@ -1,0 +1,362 @@
+---
+title: "Vorlesung"
+subtitle: "Einführung in qualitative und quantitative Forschungsmethoden"
+author: "Samuel Merk"
+format: 
+  revealjs:
+    include-in-header:
+      - text: |
+          <script src="//cdn.wordart.com/wordart.min.js" async defer></script>
+    footer: "Folien cc-by unter bit.ly/fomevl001"
+    slide-number: true
+    controls: true
+    logo: img/PHlogo.svg
+    theme: [default, css/custom.scss]
+    chalkboard:
+      theme: whiteboard
+      boardmarker-width: 3
+      buttons: true
+      chalk-effect: 0
+    fullscreen: true
+    pdfexport: true
+bibliography: references.bib
+csl: apa.csl
+---
+
+
+## Herzlich willkommen!  [{{< fa door-open >}}]{.imp} {.center}
+
+
+```{r hidden chunk which creates template stuff}
+#| echo: false
+
+## in terminal ########
+# quarto install extension quarto-ext/fontawesome
+# quarto install extension schochastics/academicons
+#
+
+########################
+library(fontawesome)
+library(tidyverse)
+
+# Change css to lecker PH green
+if(!dir.exists("img"))
+dir.create("img")
+if(!dir.exists("css"))
+dir.create("css")
+fileConn<-file("css/custom.scss")
+writeLines(c("/*-- scss:defaults --*/",
+             "$link-color: #8cd000 !default;"), fileConn)
+close(fileConn)
+```
+
+```{css}
+.callout-title {background-color: #8cd000 !important;}
+
+.imp {
+  color: #8cd000;
+}
+
+.em08{
+  font-size: .8em;
+}
+.em07{
+  font-size: .7em;
+}
+
+
+figure>figcaption {
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+.citation {
+  font-size: .8em;
+  color: #8cd000;
+}
+
+
+.timevis.html-widget .vis-background .vis-minor.vis-odd {
+  background: #8CD00030;
+  }
+  
+.vis-text {
+  color: #ffffff !important;
+  }
+  
+.vis-timeline {
+  border: transparent;
+  }
+  
+.vis-item {
+  border-color: #8CD000; 
+  background-color: #8CD000; 
+  color: #ffffff !important;
+}
+
+
+
+.vis-current-time {
+  background-color: #8CD00000;
+}
+  
+```
+
+
+## <!--Mit wem haben Sie es zu tun?--> {.center}
+### [{{< fa chalkboard-teacher >}}]{.imp} Mit wem haben Sie es zu tun? 
+<br> 
+```{r, echo = F, warning=FALSE}
+library(timevis)
+data <- data.frame(
+  id      = 1:4,
+  content = c("Item one", "Item two",
+              "Ranged item", "Item four"),
+  start   = c("2016-01-10", "2016-01-11",
+              "2016-01-20", "2016-02-14 15:00:00"),
+  end     = c(NA, NA, "2016-02-04", NA)
+)
+
+data <- data.frame(
+  #id      = 1:4,
+  content = c("Erstes SE"  ,"Zweites SE",
+              "Promotion", "Jun. Prof. TÜ", "Jun. Prof. KA", "Prof. KA",
+              "Geschwister-Scholl-Schule Tübingen"),
+  start   = c("2010-01-10", "2011-06-11", "2016-07-10", 
+              "2017-04-01", "2020-04-01", "2023-04-01", "2010-02-01"),
+  end     = c(rep(NA, 6), "2016-07-31")
+)
+
+timevis(data, 
+        loadDependencies = F, 
+        showZoom = F,
+        fit = T,
+        height = "400px")
+```
+
+
+## Heutige Vorlesung {.large .center}
+<br> 
+[{{< fa charging-station >}}]{.imp} Motivierung: Wozu _Forschung_ in der Lehrer:innenbildung?
+
+. . . 
+
+[{{< fa sitemap >}}]{.imp} Organisatorische Einführung
+
+. . .
+
+[{{< fa question-circle >}}]{.imp} Ihre Fragen
+
+. . .
+
+[{{< fa microscope >}}]{.imp} Inhaltliche Einführung: Was ist Wissenschaft? 
+
+## <!--Motivierung-->[{{< fa charging-station >}} Motivierung:]{.imp} {.center}
+#### [Wozu _Forschung_ in der Lehrer:innenbildung?]{.imp}
+
+
+
+## Charakteristika des Unterrichtens {.center}
+<center>
+<div style="width: 80%" data-wordart-src="//cdn.wordart.com/json/kpd8f5jpbst4"></div>
+
+[Nach Doyle [-@doyle1986]]{style="font-size:.6em"}
+</center>
+
+## Eine formale Begründung {.center}
+
+:::{.callout-note collapse=false appearance='default' icon=false}
+## {{< fa book-open >}} Auszug der KMK-Standards
+* *Die Absolventinnen und Absolventen kennen Grundlagen und Ergebnisse der Schul- und Unterrichtsforschung und können diese anwendungsbezogen reflektieren*
+* *Die Absolventinnen und Absolventen rezipieren und bewerten Ergebnisse der Bildungs- und Schulforschung*
+:::
+
+## Eine kompetenztheo. Begründung {.smaller}
+::: {.fragment fragment-index=1}
+Kompetenzen sind latente, domänenspezifische Dispositionen, die die erfolgreiche Problemlösung wahrscheinlicher machen [@zlatkin-troitschanskaia2009].
+:::
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.fragment fragment-index=2}
+#### Bsp. Mathematik
+"_Hr. Müller fährt auf der Autobahn, sieht auf einer App, dass die nächsten Tankstellen in 3km, 65km und 120km kommen mit den Preisen 1,49€, 1,45€ und 1,38€. Ein Blick auf das Amaturenbrett verrät ihm, dass sein Tank noch zu einem Achtel gefüllt ist, weshalb er sich fragt, bis zu welcher Tankstelle er fahren sollte._"
+:::
+:::
+
+::: {.column width="50%"}
+::: {.fragment fragment-index=3}
+#### Bsp. GPK 
+"_Hr. Müller möchte seine 8. Klasse anhand eines Arbeitsblattes in das stöchiometrische Rechnen (Chemie) einführen. Er fragt sich ob er mit einem Beispiel anfangen soll oder mit einem Problem; ob er Farbe verwenden soll und wenn ja welche; ob er Formelschreibweise oder Teilchenmodelle verwenden soll; die Legende am Rand oder ins Bild integriert sein soll, etc. _"
+:::
+:::
+
+::::
+
+::: {.fragment fragment-index=4}
+![](img/TradeOff.png){width="80%" fig-align="center"}
+:::
+
+## Eine kompetenztheo. Begründung {.smaller}
+::: columns
+::: {.column width="50%"}
+![Transfer](img/Transfer.png){.lightbox width="80%" group="my-gallery" fig-align="left"}
+
+![Selektion](img/Selektion.png){.lightbox width="80%" group="my-gallery" fig-align="left"}
+:::
+
+::: {.column width="50%"}
+![Adaption](img/Adaption.png){.lightbox width="80%" group="my-gallery" fig-align="left"}
+
+![Enrichment](img/Enrichment.png){.lightbox width="80%" group="my-gallery" fig-align="left"}
+:::
+:::
+
+
+## Eine bildungstheoretische Begründung {.center}
+
+## <!--DisparitiesZitate-->{background-image="img/gender_disparities_PISA_SCSH.png" background-size="contain"}
+
+## Bildungsziel dieser Vorlesung {.center}
+<br>
+[{{< fa check >}}]{.imp} Forschung/Studien erleben, verstehen, interpretieren, bewerten & ggfs. zum Kompetenzaufbau nutzen. 
+
+. . .
+
+<br> 
+[{{< fa times-circle >}}]{.imp} Ausbildung zur Forscherin bzw. zum Forscherin.
+
+
+## Eine kognitionspsychologische Begründung {.center}
+
+## Schätzfragen {.center .smaller}
+> Bitte bearbeiten Sie ein paar Schätzfragen & eine Studieneinschätzung. Bearbeiten Sie dazu eine kleine Survey unter [https://bit.ly/merk115]{.imp}
+
+> Wir bitten Sie die so generierten Daten für eine wiss. Auswertung freizugeben, dann können sie u.a. für die Masterarbeit Ihrer Kommilitonin Lara Moritz verwendet werden. Unter allen die zustimmen, wird ein amazon Gutschein in Höhe von 50€ verlost! Notieren Sie dazu bitte den Code auf der letzten Seite des Fragebogens.
+
+## Verzerrte und selektive Wahrnehmung {.center}
+:::: columns
+
+::: {.column width="50%"}
+![Ebbinghaustäuschung<br> [@massaro1971]](img/Ebbinghaus.png){}
+:::
+
+::: {.column width="50%"}
+
+<iframe width="560" height="515" src="https://www.youtube.com/embed/IGQmdoK_ZfY?start=08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+:::
+
+::::
+
+## [Verzerrte Wahrnehmung im Unterricht]{style="font-size:.8em;"} {.center}
+
+::: {.r-stack}
+![](img/DESI_Redeanteil-2.svg){width="110%" fig-align="center"}
+
+![](img/DESI_Redeanteil.svg){.fragment fragment-index=2 width="110%" fig-align="center"}
+::: 
+
+. . .
+
+<center>[Daten aus [@klieme2008]]{style="font-size:.5em;"}</center>
+
+## Ihre verzerrte Wahrnehmung {.center}
+### Ergebnisse der Schätzfragen
+
+
+## Hedonistische Begründung [{{< fa smile-wink >}}]{.imp} {.smaller}
+### It's fun:
+
+::: {.fragment}
+```{r, echo = F}
+tibble(
+  Fakultät = c("Studenten", "Studentinnen"),
+  `Fakultät A` = c("100%", "90%"),
+  `Fakultät B` = c("60%", "50%")
+) %>%
+  knitr::kable()
+```
+:::
+
+<br>
+
+::: {.fragment}
+```{r, echo = F}
+tibble(
+  Gruppe = c("Studenten", "Studentinnen"),
+  `Fakultät A` = c("200/200", "900/1000"),
+  `Fakultät B` = c("600/1000", "100/200"),
+  `Gesamt %` = c("~67%", "~83%")
+) %>%
+  knitr::kable()
+```
+:::
+
+::: {.fragment}
+<center> <br>Die Daten stellen das sogenannte Simpson' Paradox dar [@baker2001a] </center>
+:::
+
+##  Motivierung (Zusammenfassung) [{{< fa charging-station >}}]{.imp} {.smaller .center}
+
+### Wozu _Forschung_ in der Lehrer:innenbildung?
+
+* Formaler Grund: $\Rightarrow$ KMK Standards 
+* Kompetenztheoretischer Grund: $\Rightarrow$ Wissen über Forschung macht Sie (mittelbar) kompetenter
+* Bildungstheoretischer Grund $\Rightarrow$ Selbstbestimmt mit Forschung umgehen
+* Hedonistischer Grund $\Rightarrow$ Es macht (kann) Spaß (machen)!
+
+
+
+## <!--Organisatorische Einführung-->[{{< fa sitemap >}} Organisatorische Einführung]{.imp} {.center}
+
+
+## Organisatorische Einführung [{{< fa sitemap >}}]{.imp} {.smaller .center}
+
+> Die Vorlesung umfasst 7 inhaltliche Blöcke. 
+
+* In der Vorlesung werden die Inhalte eingeführt und elaboriert
+* Im Tutorium können Sie ab VL-Woche 2 freiwillig üben
+    * Gruppe 1: Mo.	08:00-09:30, XX, Linda Hammann	 
+    * Gruppe 2: Mi.	10:00-11:30, 1.103, Florian Kühlwein
+    * Gruppe 3: Mi.	16:30-18:00, XX, Fabian Burkart
+
+## Klausur {.smaller}
+* 6 Teilklausuren, zu Beginn jeder zweiten Vorlesung
+   * Closed Book 10-15 Minuten
+   * Bring Your Own Device
+* 1 Hauptklausur 
+   * 90 Minuten (gemeinsam mit Psychologie)
+   * Präsenz, synchron, digital, Bring Your Own Device, Open-Book, keine KI, 
+  * Termin Mittwoch 12.02.2025 16:00
+
+### Aus unserer Rahmenprüfungsordnung
+> [...] sind bestanden, wenn die oder der Studierende mindestens [60 Prozent der zu erreichenden Gesamtpunktzahl]{.imp} erreicht hat. Die Prüfung ist auch bestanden, wenn die vom Prüfling erreichte Punktzahl um nicht mehr als 20 Prozent die durchschnittlichen Prüfungsleistungen aller Prüfungsteilnehmerinnen und Prü- fungsteilnehmer an dieser Prüfung unterschreitet (relative Bestehensgrenze). Kommt die relative Bestehensgrenze zur Anwendung, so müssen für das Bestehen der Prüfung mindestens 50 Prozent der möglichen Gesamtpunkte erreicht werden.
+
+
+## Anforderungen {.smaller}
+* Sie bekommen 3CP $\Rightarrow \frac{3 \cdot 30h}{15\;Wochen} = 6\frac{h}{Woche}$ 
+* Meine Prognose: Wenn Sie diese Zeit investieren, bestehen Sie die Klausur recht sicher 
+* Befragung aus dem letzten Wintersemester22/23: Über 90% der Studierenden bringt weniger Zeit auf als durch die CP gefordert
+* Klausuraufgaben enthalten die gleichen Konzepte wie die formativen Übungsaufgaben
+
+## <!-- Image -->{background-image="img/klausur_dist.png" background-size="contain"}
+
+## <!-- Image -->{background-image="img/practice_resultsWiSe2223.png" background-size="contain"}
+
+## Vorschlag »Studierverhalten« {.smaller}
+1. Vorlesung
+   * Anwesenheit und aktive Teilnahme
+2. evtl. Tutorium oder Materialien aus dem Tutorium
+3. Selbststudium (20 Minuten pro Woche)
+
+
+
+## Ihre Fragen {.center}
+
+
+## Literatur
+<style>
+div.callout {border-left-color: #8cd000 !important;
+</style>

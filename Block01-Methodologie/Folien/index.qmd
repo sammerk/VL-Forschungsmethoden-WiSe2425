@@ -1,0 +1,432 @@
+---
+title: "Grundbegriffe quantitativ-empirischer Methodologie"
+author: "Samuel Merk"
+format: 
+  revealjs:
+    controls: true
+    slide-number: false
+    logo: img/PHlogo.svg
+    theme: [default, css/custom.scss]
+    fullscreen: true
+    pdfexport: true
+filters:
+  - shinylive
+bibliography: references.bib
+csl: apa.csl
+---
+
+## Inhalte dieses Erklärvideos{.center}
+
+```{r hidden chunk which creates template stuff}
+#| echo: false
+
+## in terminal ########
+# quarto install extension quarto-ext/fontawesome
+# quarto install extension schochastics/academicons
+#
+
+########################
+library(fontawesome)
+library(tidyverse)
+set.seed(848265)
+
+# Change css to lecker PH green
+if(!dir.exists("img"))
+dir.create("img")
+if(!dir.exists("css"))
+dir.create("css")
+fileConn<-file("css/custom.scss")
+writeLines(c("/*-- scss:defaults --*/",
+             ".reveal div.sourceCode {
+    border: 1px solid #e41212;
+    border-radius: 4px;
+}",
+             "div.sourceCode {background-color: #1279df00;}",
+             "$link-color: #8cd000 !default;",
+             ".imp {color: #8cd000;}",
+             ".em15 {font-size:1.5em;}",
+             ".c {text-align: right !important;}",
+             ".callout-title {background-color: #8cd000 !important;}"),
+           fileConn)
+close(fileConn)
+```
+
+. . .
+
+[{{< fa microscope >}}]{.imp} Wissenschaft vs. nicht-Wissenschaft  
+
+. . .  
+
+[{{< fa ruler >}}]{.imp} Kriterien Wissenschaftlicher Qualität  
+
+. . .
+
+[{{< fa map >}}]{.imp} Systematisierung quantitativer Studien  
+
+. . .
+
+[{{< fa arrow-trend-up >}}]{.imp } Steigerung der Qualität
+
+## <!--Wissenschaft vs. nicht-Wissenschaft--> {.center}
+[{{< fa microscope >}} Wissenschaft vs. nicht-Wissenschaft]{.em15 .c .imp}
+
+## Das Abgrenzungsproblem {.smaller auto-animate=true .center}
+![](img/wiss_meme.png)
+
+
+## Das Abgrenzungsproblem {.smaller auto-animate=true}
+
+:::: {.columns}
+
+::: {.column width='80%'}
+Wer wissenschaftliche Forschung („scientific research") betreibt, sucht mithilfe [anerkannter wissenschaftlicher Methoden und Methodologien]{.imp} auf der Basis des [bisherigen Forschungsstandes]{.imp} (d. h. vorliegender Theorien und empirischer Befunde) [zielgerichtet]{.imp} nach gesicherten neuen Erkenntnissen, [dokumentiert]{.imp} den Forschungsprozess sowie dessen Ergebnisse [in nachvollziehbarer Weise]{.imp} und stellt die Studie in Vorträgen und Publikationen der [Fachöffentlichkeit]{.imp} vor [@doering2016].<br><br>
+:::
+
+::: {.column width='20%'}
+<br><br><br1
+>
+<center>![](img/wiss_meme.png)</center>
+:::
+
+::::
+
+::: {.callout-tip icon=false collapse="false"}
+## {{< fa book-open >}} Weiterführende Literatur
+Lakatos, I. (1977). The Methodology of Scientific Research Programmes: Philosophical Papers Volume I. Cambridge University Press.  
+Kuhn, Thomas S. (1962). The Structure of Scientific Revolutions. University of Chicago Press.    
+Popper, K. (1989). Logik der Forschung. Mohr.
+:::
+
+
+## Nicht-Wissenschaft Bsp. 1: {.smaller .center}
+
+> [Practical Wisdom]{.imp}. Beispielsweise stellt der Tipp eines Betreuungslehrers - lernen Sie schnell die Vornamen, das wird das Classroommanagement schnell erleichtern - Nicht-Wissenschaft dar.
+
+. . .
+
+<br> Wer wissenschaftliche Forschung („scientific research") betreibt,
+sucht mithilfe [anerkannter wissenschaftlicher Methoden und
+Methodologien]{.imp} <i class="fa fa-times-circle"></i> auf der Basis
+des [bisherigen Forschungsstandes]{.imp}
+<i class="fa fa-times-circle"></i> (d. h. vorliegender Theorien und
+empirischer Befunde) [zielgerichtet]{.imp}
+<i class="fa fa-times-circle"></i> nach gesicherten neuen Erkenntnissen,
+[dokumentiert]{.imp} <i class="fa fa-times-circle"></i> den
+Forschungsprozess sowie dessen Ergebnisse [in nachvollziehbarer
+Weise]{.imp} <i class="fa fa-times-circle"></i> und stellt die Studie in
+Vorträgen und Publikationen der [Fachöffentlichkeit]{.imp}
+<i class="fa fa-times-circle"></i> vor.
+
+
+## Nicht-Wissenschaft Bsp. 2: {.smaller .center}
+
+> [Datenbasierte Schulentwicklung]{.imp}. Beispielsweise stellt eine Befragung von Eltern zu einer geplanten Schulmensa trotz »perfektem Fragebogen & optimaler Auswertung« Nicht-Wissenschaft dar.
+
+. . .
+
+<br> Wer wissenschaftliche Forschung („scientific research") betreibt,
+sucht mithilfe [anerkannter wissenschaftlicher Methoden und
+Methodologien]{.imp} <i class="fa fa-check-circle"></i> auf der Basis
+des [bisherigen Forschungsstandes]{.imp}
+<i class="fa fa-times-circle"></i> (d. h. vorliegender Theorien und
+empirischer Befunde) \[zielgerichtet\]
+<i class="fa fa-check-circle"></i> nach gesicherten neuen Erkenntnissen,
+[dokumentiert]{.imp} <i class="fa fa-times-circle"></i> den
+Forschungsprozess sowie dessen Ergebnisse [in nachvollziehbarer
+Weise]{.imp} <i class="fa fa-times-circle"></i> und stellt die Studie in
+Vorträgen und Publikationen der [Fachöffentlichkeit]{.imp}
+<i class="fa fa-times-circle"></i> vor.
+
+## <!--Kriterien der wiss. Qualität --> {.center}
+[{{< fa ruler >}} Kriterien der wiss. Qualität]{.em15 .c .imp}
+
+## Kriterien der wiss. Qualität {.smaller .center}
+Im Bereich der quantitativen empirischen Sozialforschung sind die folgenden Kriterien vglw. unumstritten [@doering2016]:
+
+::: {.incremental}
+* Relevanz
+* Ethische Strenge
+* Methodische Strenge
+     * Konstruktvalidität
+     * Interne Validität
+     * Externe Validität
+     * Statistische Validität
+* Präsentationsqualität
+:::
+
+## Definition: Interne Validität {.center .smaller}
+<br>
+
+> Die interne Validität einer Studie beschreibt inwiefern die untersuchten Variablenzusammenhänge als kausal (Ursache-Wirkungs-Relation) interpretiert werden können [siehe @campbell1957a].
+
+## Definition: Externe Validität {.center .smaller}
+<br>
+
+> Die externe Validität einer Studie beschreibt inwiefern sich die Schlussfolgerungen einer Studie (auf andere Proband\*innen, Zeiten, etc.) verallgemeinern lassen [siehe @campbell1957a].
+
+## <!--Systematisierung (quantitativer Studien) in den Sozialwissenschaften--> {.center}
+[{{< fa map >}} Systematisierung (quantitativer Studien) in den Sozialwissenschaften]{.em15 .c .imp}
+
+## [Empirische, theo. & methodische Studien ]{style="font-size: 0.92em"} {.smaller .center}
+
+::: {style="font-size: 0.7em"}
+> [Empirisch]{.imp} meint auf Beobachtungen beruhend, die zielgerichtet für die Forschungsfrage generiert wurden. <br> [Theoretisch]{.imp} meint ohne direkten Rückgriff auf empirische Daten. <br> 
+[Methodisch]{.imp} meint eine wissenschaftliche Methode untersuchend.
+
+:::
+
+<br>
+
+::: {.fragment fragment-index=1}
+### [Beispiele (Auszüge aus Abstracts)]{style="font-size: 0.80em"}
+:::
+
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 0.65em"}
+::: {.fragment fragment-index=2}
+"The purpose of the present study was to test
+the association between persistent cannabis use and neuropsychological
+decline and determine whether decline is concentrated among
+adolescent-onset cannabis users. Participants were members of the
+Dunedin Study, a prospective study of a birth cohort of 1,037
+individuals followed from birth (1972/1973) to age 38 y. Cannabis use
+was ascertained in interviews at ages 18, 21, 26, 32, and 38 y [...]"
+[@meier_persistent_2012].<br>
+:::
+:::
+
+::: {style="font-size: 0.85em"}
+::: {.fragment fragment-index=3}
+[➡ Empirische Studie]{.imp}
+:::
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 0.65em"}
+::: {.fragment fragment-index=4}
+"Der Beitrag diskutiert die Bedeutung von Meta-Reflexivität für die
+Professionalität im Lehrerinnen- und Lehrerberuf. Meta-Reflexivität
+beruht erstens auf der für die Lehrerbildung konstitutiven
+Mehrperspektivität, die wiederum auf die vielfältigen an ihr beteiligten
+Disziplinen und Studienelemente zurückgeht. Zweitens greift der Ansatz
+Ungewissheit als konstitutives Merkmal der gängigen Professionstheorien
+zum Lehrerinnen- und Lehrerberuf auf. Ausgehend von einer
+historisch-systematischen Rekonstruktion wird Meta-Reflexivität als ein
+Element von Professionalität entfaltet [...]" [@cramer2019].<br>
+:::
+:::
+
+::: {style="font-size: 0.85em"}
+::: {.fragment fragment-index=5}
+[➡ Theoretische Studie]{.imp}
+:::
+:::
+:::
+
+
+:::
+
+
+
+## Primär-, Sekundär-, Metastudien {.smaller .center}
+
+::: {style="font-size: 0.7em"}
+> [Primärstudien]{.imp} nutzen einen eigens für die Studie generierten Datensatz.  
+[Sekundärstudien]{.imp} reanalysieren bereits vorhandene Datensätze.  
+[Metaanalysen]{.imp} analysieren die Ergebnisse mehrerer vergleichbarer Studien.
+
+<br>
+
+::: {.fragment fragment-index=1}
+### Beispiele (Auszüge aus Abstracts): {.smaller}
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 0.65em"}
+::: {.fragment fragment-index=2}
+"Suspension of face-to-face instruction in schools during the COVID-19
+pandemic has led to concerns about consequences for students' learning.
+So far, data to study this question have been limited. Here we evaluate
+the effect of school closures on primary school performance using
+exceptionally rich data from The Netherlands (n ≈ 350,000). We use the
+fact that national examinations took place before and after lockdown and
+compare progress during this period to the same period in the 3 previous
+years. [...]" [@engzell_learning_2021].<br>
+:::
+:::
+
+
+::: {style="font-size: 0.85em"}
+::: {.fragment fragment-index=3}
+[➡ Sekundärstudie]{.imp}
+:::
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 0.65em"}
+::: {.fragment fragment-index=4}
+"Kinder mit sprachlichem Migrationshintergrund stehen beim Erwerb
+sprachlicher Kompetenzen in der Schule vor besonderen Herausforderungen.
+Wir untersuchen Stereotypenbedrohung als mögliche Ursache für einen
+geringeren Wortschatzzuwachs. N = 118 Kinder mit sprachlichem
+Migrationshintergrund aus 18 Grundschulklassen der vierten
+Jahrgangsstufe wurden randomisiert einer expliziten, einer impliziten
+oder keiner Stereotypenbedrohung ausgesetzt und sollten im Anschluss
+schwierige Wörter erlernen. Erwartungsgemäß war der Wortschatzzuwachs in
+den beiden Bedrohungsbedingungen, insbesondere in der expliziten,
+geringer als in der Kontrollbedingung. (...)"
+[@sander_stereotypenbedrohung_2018].
+:::
+:::
+
+
+::: {style="font-size: 0.85em"}
+::: {.fragment fragment-index=5}
+[➡ Primärstudie]{.imp}
+:::
+:::
+:::
+:::
+
+
+## [Deskriptive, explanative, explorative Studien]{style="font-size: 0.85em"} {.smaller .center}
+
+::: {style="font-size: 0.7em"}
+> Deskriptive Studien zielen auf die [Beschreibung der Verteilung von Variablen in der Population]{.imp} ab.  
+Explanative Studien zielen auf die [Verifikation/Falsifikation bestehender Kausalhypothesen]{.imp} ab.  
+Explorative Studien zielen auf die [Genese von Hypothesen]{.imp} ab.
+<br>
+:::
+
+::: {.fragment fragment-index=1}
+### Beispiele (Auszüge aus Abstracts): {.smaller}
+:::
+
+
+::: columns
+::: {.column width="50%"}
+::: {style="font-size: 0.65em"}
+::: {.fragment fragment-index=2}
+"Suspension of face-to-face instruction in schools during the COVID-19
+pandemic has led to concerns about consequences for students' learning.
+So far, data to study this question have been limited. Here we evaluate
+the effect of school closures on primary school performance using
+exceptionally rich data from The Netherlands (n ≈ 350,000). We use the
+fact that national examinations took place before and after lockdown and
+compare progress during this period to the same period in the 3 previous
+years. [...]" [@engzell_learning_2021].<br>
+:::
+:::
+
+::: {style="font-size: 0.85em"}
+::: {.fragment fragment-index=3}
+[➡ Deskriptive Studie]{.imp}
+:::
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 0.65em"}
+::: {.fragment fragment-index=4}
+"Kinder mit sprachlichem Migrationshintergrund stehen beim Erwerb
+sprachlicher Kompetenzen in der Schule vor besonderen Herausforderungen.
+Wir untersuchen Stereotypenbedrohung als mögliche Ursache für einen
+geringeren Wortschatzzuwachs. N = 118 Kinder mit sprachlichem
+Migrationshintergrund aus 18 Grundschulklassen der vierten
+Jahrgangsstufe wurden randomisiert einer expliziten, einer impliziten
+oder keiner Stereotypenbedrohung ausgesetzt und sollten im Anschluss
+schwierige Wörter erlernen. Erwartungsgemäß war der Wortschatzzuwachs in
+den beiden Bedrohungsbedingungen, insbesondere in der expliziten,
+geringer als in der Kontrollbedingung. [...]"
+[@sander_stereotypenbedrohung_2018].<br>
+:::
+:::
+
+::: {style="font-size: 0.85em"}
+::: {.fragment fragment-index=5}
+[➡ Explanative Studie]{.imp}
+:::
+:::
+:::
+:::
+
+## 
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 600
+
+source("https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/methodologie/erkenntnisinteresse/server-app/app.R")
+shinyApp(ui = ui, server = server)
+```
+
+
+
+
+
+## [Messwiederholte und querschnittliche Studien]{style="font-size: .82em" .center}
+::: {style="font-size: 0.65em"}
+> Bei [querschnittlichen Studien]{.imp} wird nur einmalig gemessen.  
+[Längsschnittliche Studien]{.imp} messen dieselben Variablen bei denselben Merkmalsträgern zu mehreren Zeitpunkten.  
+[Trendstudien]{.imp} messen dieselben Variablen derselben Grundgesamtheit (Population) zu mehreren Zeitpunkten.  
+:::
+
+. . .
+
+![](img/longi.png){width="60%" fig-align="center"}
+
+## Laborstudie, Feldstudie {.smaller .center}
+> Als [Laborstudien]{.imp} bezeichent man Studien, die in einer künstlich kontrollierbaren Umgebung stattfinden.  
+Bei [Feldstudien]{.imp} werden die Merkmalsträger in ihrer natürlichen Umgebung untersucht.
+
+
+## [Experiment, Quasi- und Nicht-Experiment]{style="font-size:.91em"} {.smaller}
+::: {style="font-size:.8em"}
+> [Experimente und Quasiexperimente]{.imp} teilen Proband\*innen in Gruppen ein, welche Sie unterschiedlichen Interventionen (auch »Behandlungen« oder »Treatments«) unterziehen.  
+[Nicht-Experimente]{.imp} verzichten hierauf.  
+Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohingegen die Gruppen bei Quasi-Experimenten durch andere Mechanismen zustande kommen oder bereits feststehen.
+:::
+
+<br>
+
+. . .
+
+![](img/flowchart_exp_quasiexp.png){fig-align="center" width=87%}
+
+
+
+## <!--Steigerung der internen/externen Validität--> {.center}
+[{{< fa arrow-trend-up >}} Steigerung der int./ext. Validität]{.imp style="font-size:1.8em"}
+
+
+## Steigerung der internen Validität {.center .smaller}
+:::{.incremental}
+* Experimentelle Studiendesigns
+* Längsschnittliche Studiendesigns
+* Matching Studien
+* Laborstudien
+* Verblindung
+* Kontroll- und Vergleichsgruppen
+* Inferenzstatistik
+* Direkte Replikationsstudien
+* Präregistrierung
+:::
+
+## Steigerung der externen Validität {.center}
+:::{.incremental}
+* Große, möglichst repräsentative Stichproben
+* Zufallsstichproben
+* Feldstudien
+* Metaanalysen
+* Konzeptuelle Replikationsstudien
+:::
+
+## Literatur
+<style>
+div.callout {border-left-color: #8cd000 !important;
+</style>
+
