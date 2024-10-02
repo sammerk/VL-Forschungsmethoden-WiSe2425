@@ -1,8 +1,5 @@
 library(shiny)
 library(bslib)
-library(ggplot2)
-library(tidyr)
-library(dplyr)
 
 custom_theme <- bs_theme(
   font_scale = .8
@@ -16,9 +13,11 @@ ui <- page_fixed(
       card_body(
           card(shinycssloaders::withSpinner(
                plotOutput("plot1", 
-                          width = "300px",
-                          height = "300px"),
-               color = "#8cd000")
+                         width = "300px",
+                         height = "300px"
+                         ),
+               color = "#8cd000"),
+               textOutput("overlap")
                ),
         layout_columns(
           actionButton("smaller_plot1",  icon("scale-balanced")),
@@ -42,39 +41,37 @@ distribution_normal <- function(n,
 
 server <- function(input, output) {
   
-  data1 <- reactive({
-    tibble(`Erstklässler` = distribution_normal(300, 121, 7.9),
-           `Zweitklässler` = distribution_normal(300, 121, 7.9) +
-             max(1.6*input$larger_plot1 - 1.6*input$smaller_plot1, 0)
-    ) %>% 
-      gather(Klasse, `Körpergröße in cm`)
-  })
-  
   output$plot1 <- renderPlot({
-      ggplot(data1(), aes(x = `Körpergröße in cm`)) +
-      #geom_dotplot(binaxis = "x",
-      #             stackdir = "up",
-      #             dotsize = .7) + 
-      geom_histogram() +
-      facet_wrap(~Klasse, ncol = 1) +
-      theme_minimal(base_size = 12) +
-      ylab("") +
-      ggtitle(paste0("Aktuelle Überlappung = ", round(2*pnorm(-abs(cohend())/2), 2)*100, "%"))
-                    
+    Erstklässler=distribution_normal(300, 121, 7.9)     
+    Drittklässler=distribution_normal(300, 121, 7.9) +
+      max(1*input$larger_plot1 - 1*input$smaller_plot1, 0)
+    
+    # First distribution
+    par(mfrow = c(2,1), mar=c(2,1,1.5,1))
+    hist(Erstklässler, 
+         breaks=30, 
+         xlim=c(min(c(Erstklässler, Drittklässler)),max(c(Erstklässler, Drittklässler))), 
+         ylab = "",
+         xlab = "",
+         col=rgb(1,0,0,0.5), 
+         main="Erstklässler" )
+    
+    # Second with add=T to plot on top
+    hist(Drittklässler, 
+         breaks=30, 
+         xlim=c(min(c(Erstklässler, Drittklässler)),max(c(Erstklässler, Drittklässler))), 
+         ylab = "",
+         col=rgb(0,0,1,0.5),
+         main="Drittklässler" )
   })
   
   cohend <- reactive({
-    (data1() %>% 
-       filter(Klasse == "Erstklässler") %>% 
-       pull(`Körpergröße in cm`) %>% 
-       mean(.) - 
-       data1() %>% 
-       filter(Klasse == "Zweitklässler") %>% 
-       pull(`Körpergröße in cm`) %>% 
-       mean(.))/15
+    (mean(distribution_normal(300, 121, 7.9)) - 
+       mean(distribution_normal(300, 121, 7.9) +
+              max(1*input$larger_plot1 - 1*input$smaller_plot1, 0)))/15
   })
   
-  output$debug <- renderPrint({
+  output$overlap <- renderText({
     paste0("Aktuelle Überlappung = ", round(2*pnorm(-abs(cohend())/2), 2)*100, "%")
   })
 }   
