@@ -1,9 +1,7 @@
 /*-- scss:defaults --*/
 .reveal div.sourceCode {
-    border: 1px solid #e41212;
-    border-radius: 4px;
-}
-div.sourceCode {background-color: #1279df00;}
+                  border: 1px solid #8cd00000 !important;
+                  background-color: #1279df00;}
 $link-color: #8cd000 !default;
 .imp {color: #8cd000;}
 .em15 {font-size:1.5em;}

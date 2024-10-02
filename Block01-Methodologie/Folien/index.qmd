@@ -15,7 +15,7 @@ bibliography: references.bib
 csl: apa.csl
 ---
 
-## Inhalte dieses Erklärvideos{.center}
+## Inhalte dieser Vorlesung{.center}
 
 ```{r hidden chunk which creates template stuff}
 #| echo: false
@@ -38,10 +38,8 @@ dir.create("css")
 fileConn<-file("css/custom.scss")
 writeLines(c("/*-- scss:defaults --*/",
              ".reveal div.sourceCode {
-    border: 1px solid #e41212;
-    border-radius: 4px;
-}",
-             "div.sourceCode {background-color: #1279df00;}",
+                  border: 1px solid #8cd00000 !important;
+                  background-color: #1279df00;}",
              "$link-color: #8cd000 !default;",
              ".imp {color: #8cd000;}",
              ".em15 {font-size:1.5em;}",
@@ -163,6 +161,19 @@ Im Bereich der quantitativen empirischen Sozialforschung sind die folgenden Krit
 <br>
 
 > Die externe Validität einer Studie beschreibt inwiefern sich die Schlussfolgerungen einer Studie (auf andere Proband\*innen, Zeiten, etc.) verallgemeinern lassen [siehe @campbell1957a].
+
+
+## <!--Aufgabe guetekriterium-wissenschaftlicher-erkenntnis-erkennen-->
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 600
+
+source("https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/methodologie/guetekriterium-wissenschaftlicher-erkenntnis-erkennen/server-app/app.R")
+shinyApp(ui = ui, server = server)
+```
+
+
+
 
 ## <!--Systematisierung (quantitativer Studien) in den Sozialwissenschaften--> {.center}
 [{{< fa map >}} Systematisierung (quantitativer Studien) in den Sozialwissenschaften]{.em15 .c .imp}
@@ -355,7 +366,8 @@ geringer als in der Kontrollbedingung. [...]"
 :::
 :::
 
-## 
+
+## <!--Aufgabe Erkenntnisinteresse-->
 ```{shinylive-r}
 #| standalone: true
 #| viewerHeight: 600
@@ -395,8 +407,17 @@ Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohing
 
 . . .
 
-![](img/flowchart_exp_quasiexp.png){fig-align="center" width=87%}
+![](img/flowchart_exp_quasiexp_dark.png){fig-align="center" width=87%}
 
+
+## <!--Aufgabe Erkenntnisinteresse-->
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 600
+
+source("https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/methodologie/experimentelles-design/server-app/app.R")
+shinyApp(ui = ui, server = server)
+```
 
 
 ## <!--Steigerung der internen/externen Validität--> {.center}
@@ -416,6 +437,17 @@ Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohing
 * Präregistrierung
 :::
 
+## <!--Aufgabe steigerung-interne-validitaet-->
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 600
+
+source("https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/methodologie/steigerung-interne-validitaet/server-app/app.R")
+shinyApp(ui = ui, server = server)
+```
+
+
+
 ## Steigerung der externen Validität {.center}
 :::{.incremental}
 * Große, möglichst repräsentative Stichproben
@@ -424,6 +456,15 @@ Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohing
 * Metaanalysen
 * Konzeptuelle Replikationsstudien
 :::
+
+## <!--Aufgabe steigerung-externe-validitaet-->
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 600
+
+source("https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/methodologie/steigerung-externe-validitaet/server-app/app.R")
+shinyApp(ui = ui, server = server)
+```
 
 ## Literatur
 <style>
