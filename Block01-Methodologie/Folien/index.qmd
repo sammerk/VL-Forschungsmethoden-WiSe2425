@@ -393,7 +393,7 @@ shinyApp(ui = ui, server = server)
 
 ## Laborstudie, Feldstudie {.smaller .center}
 > Als [Laborstudien]{.imp} bezeichent man Studien, die in einer künstlich kontrollierbaren Umgebung stattfinden.  
-Bei [Feldstudien]{.imp} werden die Merkmalsträger in ihrer natürlichen Umgebung untersucht.
+Bei [Feldstudien]{.imp} werden die Merkmalsträger in ihrer natürlichen Umgebung untersucht. 
 
 
 ## [Experiment, Quasi- und Nicht-Experiment]{style="font-size:.91em"} {.smaller}
