@@ -104,7 +104,7 @@ figure>figcaption {
 
 
 ## <!--Mit wem haben Sie es zu tun?--> {.center}
-### [{{< fa chalkboard-teacher >}}]{.imp} Mit wem haben Sie es zu tun? 
+### [{{< fa chalkboard-teacher >}}]{.imp} Cora Parrisius 
 <br> 
 ```{r, echo = F, warning=FALSE}
 library(timevis)
@@ -134,6 +134,35 @@ timevis(data,
         height = "400px")
 ```
 
+### [{{< fa chalkboard-teacher >}}]{.imp} Samuel Merk 
+<br> 
+```{r, echo = F, warning=FALSE}
+library(timevis)
+data <- data.frame(
+  id      = 1:4,
+  content = c("Item one", "Item two",
+              "Ranged item", "Item four"),
+  start   = c("2016-01-10", "2016-01-11",
+              "2016-01-20", "2016-02-14 15:00:00"),
+  end     = c(NA, NA, "2016-02-04", NA)
+)
+
+data <- data.frame(
+  #id      = 1:4,
+  content = c("Erstes SE"  ,"Zweites SE",
+              "Promotion", "Jun. Prof. TÜ", "Jun. Prof. KA", "Prof. KA",
+              "Geschwister-Scholl-Schule Tübingen"),
+  start   = c("2010-01-10", "2011-06-11", "2016-07-10", 
+              "2017-04-01", "2020-04-01", "2023-04-01", "2010-02-01"),
+  end     = c(rep(NA, 6), "2016-07-31")
+)
+
+timevis(data, 
+        loadDependencies = F, 
+        showZoom = F,
+        fit = T,
+        height = "400px")
+```
 
 ## Heutige Vorlesung {.large .center}
 <br> 
@@ -231,9 +260,7 @@ Kompetenzen sind latente, domänenspezifische Dispositionen, die die erfolgreich
 ## Eine kognitionspsychologische Begründung {.center}
 
 ## Schätzfragen {.center .smaller}
-> Bitte bearbeiten Sie ein paar Schätzfragen & eine Studieneinschätzung. Bearbeiten Sie dazu eine kleine Survey unter [https://bit.ly/merk115]{.imp}
-
-> Wir bitten Sie die so generierten Daten für eine wiss. Auswertung freizugeben, dann können sie u.a. für die Masterarbeit Ihrer Kommilitonin Lara Moritz verwendet werden. Unter allen die zustimmen, wird ein amazon Gutschein in Höhe von 50€ verlost! Notieren Sie dazu bitte den Code auf der letzten Seite des Fragebogens.
+> Bitte bearbeiten Sie ein paar Schätzfragen & eine Studieneinschätzung. Bearbeiten Sie dazu eine kleine Survey unter [https://bit.ly/merk125]{.imp}
 
 ## Verzerrte und selektive Wahrnehmung {.center}
 :::: columns
