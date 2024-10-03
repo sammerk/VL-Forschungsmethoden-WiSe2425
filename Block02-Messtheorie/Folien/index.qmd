@@ -18,7 +18,7 @@ bibliography: references.bib
 csl: apa.csl
 ---
 
-## Inhalte dieses Erklärvideos{.center}
+## Inhalte dieses Vorlesungsblocks {.center}
 
 ```{r hidden chunk which creates template stuff}
 #| echo: false
@@ -69,6 +69,9 @@ close(fileConn)
 
 [{{< fa thumbs-up >}}]{.imp } Dos and Don'ts bei der Fragebogenerstellung
 
+. . .
+
+[{{< fa brain >}}]{.imp } Übung & Anwendung
 
 ## <!--Was ist eine Messung--> {.center}
 [{{< fa scale-unbalanced >}} Was ist eine Messung?]{.em15 .c .imp}
@@ -114,6 +117,10 @@ Eid, M., Gollwitzer, M., & Schmitt, M. (2013). Statistik und Forschungsmethoden:
 Steyer, R., & Eid, M. (2013). Messen und Testen. Springer-Verlag.
 :::
 
+## Aufgabe
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#zuordnungen-als-homomorphismus-identifizieren](https://sammerk.github.io/aufgaben-book/messtheorie.html#zuordnungen-als-homomorphismus-identifizieren)
+
+
 ## <!--Typologien von Variablen--> {.center}
 [{{< fa ruler-combined >}} Typologien von Variablen]{.em15 .c .imp}
 
@@ -130,6 +137,8 @@ tibble(Skalenniveau = c("Nominalskala", "Ordinalskala", "Intervallskala"),
   knitr::kable()
 ```
 
+## Aufgabe
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#skalenniveaus-erkennen](https://sammerk.github.io/aufgaben-book/messtheorie.html#skalenniveaus-erkennen)
 
 ## Typologie II: Inferenzniveau {.smaller .center}
 > Das Inferenzniveau einer Variable beschreibt, in welchem Ausmaß bei einer Messung geschlussfolgert/abstrahiert wird [@lotz2013a].
@@ -154,6 +163,9 @@ tibble(Skalenniveau = c("Nominalskala", "Ordinalskala", "Intervallskala"),
 
 ::::
 
+## Aufgabe
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#inferenzniveau-zuordnen](https://sammerk.github.io/aufgaben-book/messtheorie.html#inferenzniveau-zuordnen)
+
 
 ## [Typologie  III: Theo. Kausalzusammenhang]{style="font-size:0.9em"} {.smaller}
 ::: {.fragment fragment-index=4}
@@ -175,6 +187,13 @@ Pearl, J., Glymour, M., & Jewell, N. P. (2016). Causal inference in statistics: 
 :::
 :::
 
+
+## Aufgabe
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#abhängige-variable-identifizieren](https://sammerk.github.io/aufgaben-book/messtheorie.html#abhängige-variable-identifizieren)
+
+
+## Aufgabe
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#abhängige-unabhängige-und-moderatorvariable-in-abstract-identifizieren](https://sammerk.github.io/aufgaben-book/messtheorie.html#abhängige-unabhängige-und-moderatorvariable-in-abstract-identifizieren)
 
 
 ## <!--Gütekriterien einer Messung--> {.center}
@@ -224,7 +243,8 @@ Das Ausmaß der theoretischen und empirischen Belege für die Angemessenheit der
 ![](img/Konstruktval.png){.fragment fragment-index=3 width="100%" fig-align="center"}
 :::
 
-
+## Aufgabe
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#guetekriterien-einer-messung-erkennen](https://sammerk.github.io/aufgaben-book/messtheorie.html#guetekriterien-einer-messung-erkennen)
 
 
 ## <!--(Einige) Erhebungsverfahren--> {.center}
@@ -352,6 +372,57 @@ Bei der Dokumentenanalyse werden bereits existierende schriftliche Artefakte unt
 * Implementieren Sie Qualitätschecks (z.B. sog. Items mit sicherer Antwort im gleichen Antwortformat wie die vorherigen Items »Ich bin noch nie im Leben zu spät gekommen«)
 * Planen Sie für jedes Item eine Auswertungsstrategie **bevor** Sie die Daten erheben. 
 :::
+
+## Übung
+Bearbeiten Sie die folgenden Impulsfragen mit Ihrer Sitznachbarin bzw. Ihrem Sitznachbarn:
+
+* Warin unterscheiden sich Konstruktvalidität und interne Validität
+* Ist ein Instrument, das hochgradig konstruktvalide ist immer auch hochradig reliabel?
+* Sie wollen in Ihrer Masterarbeit den Effekt eines AI-basierten Lautlesetutors untersuchen. Wie gehen Sie vor um ein Instrument zur Messung der Leseflüssigkeit und Lesekorrektheit zu finden?
+
+## Bezugsnormen in der Praxis {.smaller}
+Neben der **Messung** schulischer Fähigkeiten stellt die **Bewertung** selbiger eine zentrale Herausforderung für LuL dar [@bohl2004]. Grundsätzlich wird dabei zwischen **formativem** und **summativem** Assessment unterschieden. Bei ersterem dient die Leistungsmessung der Ermittlung des Unterschieds zwischen Lernstand und Lernziel und der dadurch notwendigen nächsten Lernschritte [@schuetze2018].  
+Bei der summativen Leistungsbewertung wird typischerweise zwischen drei Bezugsnormen unterschieden:  
+![](img/Abbildung 1.png){width="30%" fig-align="center"}
+
+## Bezugsnormen {.smaller}
+Unter Bezugsnormen versteht man den ‚Standard‘, der zur Bewertung einer Leistung herangezogen wird [@heckhausen1974].  
+
+* Die **‚soziale Bezugsnorm‘** liegt vor, wenn das zu bewertende Ergebnis mit den Ergebnissen einer Vergleichsgruppe, die denselben Test durchlaufen hat, abgeglichen wird.  
+* Die **‚kriteriale Bezugnorm‘** (auch ‚sachliche Bezugnorm‘; Rheinberg & Fries, @rheinberg2010a) legt a priori inhaltlich fest, was eine ‚gute‘ Leistung auszeichnet.  
+* Die **‚individuelle Bezugsnorm‘** (auch ‚temporale‘, ‚intraindividuelle‘ oder ‚ipsative Bezugsnorm‘) vergleicht (wie die soziale Bezugsnorm) zur Bewertung einer Leistung diese ebenfalls mit anderen realen (empirisch gemessenen) Leistungen. Allerdings stammen jene Leistungen vom selben Merkmalsträger (Individuum).
+
+## Bezugsnormen
+* Die Notenvergabeverordnung Baden-Württemberg impliziert klar die Anwendung der kriterialen Bezugsnorm unter Berücksichtigung der individuellen Bezugsnorm in speziellen Fällen (z.B. Probeversetzung).
+* Die Anwendung der individuellen Bezugsnorm gilt jedoch klar als stärker motivations- und lernförderlich [@rheinberg2010a]
+* Lehrerinnen und Lehrer wenden in der Praxis wohl meist implizit eine Mischung von Bezugsnormen an. Dies senkt die Konstruktvalidität der Leistungsmessung
+
+## Aufgabe
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#bezugsnormen-in-aussagen-erkennen](https://sammerk.github.io/aufgaben-book/messtheorie.html#bezugsnormen-in-aussagen-erkennen)
+
+
+## Leistungsmessung in der Bildungsforschung {.smaller}
+In der Bildungsforschung werden statistische Modelle zur Konstruktion von Leistungsmessungsinstrumenten herangezogen. Das am weitesten verbreitetste Modell ist die sogenannte Item-Response-Theorie [@kelava2020]. Diese Diese postuliert unter anderem, dass die Wahrscheinlichkeit, dass eine Schüler:in $p$ eine Testfrage $i$ richtig beantwortet $P(X_{pi} = 1)$ lediglich von der Schwierigkeit der Frage $\beta_i$ und der Ausprägung der Leistung der Schüler:in $\theta$ abhängt, wobei diese Größen wie folgt in Beziehung stehen.
+$$
+P\left(X_{p i}=1\right)=\frac{e^{\theta_p-\beta_i}}{1+e^{\theta_p-\beta_i}}
+$$
+
+## Leistungsm. in der Bildungsforsch. {.smaller}
+Zur Erstellung von Tests die diesem Modell folgen wird ein großer Pool als curricular validen Aufgaben erstellt, der dann an einer Eichstichprobe verankert wird. Nach Aussortieren nicht modellkonformer Aufgaben, werden die Aufgabenschwierigkeitsparameter bestimmt. Eine Post-Hoc-Analyse der Aufgabenschwierigkeiten führt dann zur Festlegung von Kompetenzstufen:
+![](img/Abbildung 2.png){width="32%"}. 
+Lehrkräfte kommen bei der Durchführung von Vergleichsarbeiten, Lernstandserhebungen und diagnosegeleiteter Förderung (siehe nächste Folie) mit der Item-Response-Theorie in Berührung.
+
+## Diagnosegeleitete Förderung {.smaller}
+Sog. diagnosegeleitete Förderung oder Lernverlaufsdiagnostik vereint die Vorteile von wiss. Leistungsmessung (Obj., Rel., Konstruktval.) mit den Vorteilen formativen Assessments [@souvignier2014].  
+Befunde aus der Leseförderungsforschung imlizieren etwa klar die Notwendigkeit der gestuften Förderung von Leserichtigkeit, Leseflüssigkeit und Textverständnis. Proprietäre und lizenzoffene Diagnoseplattformen wie [www.quop.de](www.quop.de) oder [www.levumi.de](www.levumi.de) erlauben Lehrkräften die konstruktvalide Erfassung von Lernständen bzgl. spezifischer Kompetenzen und bieten passgenaues, differenziertes Fördermaterial an [@blumenthalstefan2022].
+
+<!-- Hier hätte der Samuel gerne noch 1-2 Studien um deren interne Validität zu besprechen 
+z.B. 
+
+Collins, M., & Lundstedt, J. (2024). The effects of more informative grading on student outcomes. Journal of Economic Behavior & Organization, 218, 514–549. https://doi.org/10.1016/j.jebo.2023.12.001
+
+
+-->
 
 
 ## Literatur
