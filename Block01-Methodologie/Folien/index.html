@@ -8,11 +8,6 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<meta name="shinylive:serviceworker_dir" content=".">
-<script src="index_files/libs/quarto-contrib/shinylive-0.5.0/shinylive/load-shinylive-sw.js" type="module"></script>
-<script src="index_files/libs/quarto-contrib/shinylive-0.5.0/shinylive/run-python-blocks.js" type="module"></script>
-<link href="index_files/libs/quarto-contrib/shinylive-0.5.0/shinylive/shinylive.css" rel="stylesheet">
-<link href="index_files/libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="index_files/libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.30">
@@ -36,71 +31,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -531,16 +461,14 @@ Popper, K. (1989). Logik der Forschung. Mohr.</p>
 <p>Die externe Validität einer Studie beschreibt inwiefern sich die Schlussfolgerungen einer Studie (auf andere Proband*innen, Zeiten, etc.) verallgemeinern lassen <span class="citation" data-cites="campbell1957a">(siehe <a href="#/literatur" role="doc-biblioref" onclick="">Campbell, 1957</a>)</span>.</p>
 </blockquote>
 </section>
-<section id="section-2" class="slide level2">
-<h2><!--Aufgabe guetekriterium-wissenschaftlicher-erkenntnis-erkennen--></h2>
-<div class="sourceCode" id="cb1" data-engine="r"><pre class="sourceCode numberSource shinylive-r number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href=""></a>#| '!! shinylive warning !!': |</span>
-<span id="cb1-2"><a href=""></a>#|   shinylive does not work in self-contained HTML documents.</span>
-<span id="cb1-3"><a href=""></a>#|   Please set `embed-resources: false` in your metadata.</span>
-<span id="cb1-4"><a href=""></a>#| standalone: true</span>
-<span id="cb1-5"><a href=""></a>#| viewerHeight: 600</span>
-<span id="cb1-6"><a href=""></a></span>
-<span id="cb1-7"><a href=""></a>source("https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/methodologie/guetekriterium-wissenschaftlicher-erkenntnis-erkennen/server-app/app.R")</span>
-<span id="cb1-8"><a href=""></a>shinyApp(ui = ui, server = server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="aufgabe" class="slide level2">
+<h2>Aufgabe</h2>
+<blockquote>
+<p>Bearbeiten Sie Aufgaben unter <a href="https://sammerk.github.io/aufgaben-book/methodologie.html#gütekriterien-wissenschaftlicher-erkenntnisse-erkennen">https://sammerk.github.io/aufgaben-book/methodologie.html#gütekriterien-wissenschaftlicher-erkenntnisse-erkennen</a></p>
+</blockquote>
+</section>
+<section id="section-2" class="slide level2" data-background-iframe="https://sammerk.github.io/aufgaben-book/methodologie.html#gütekriterien-wissenschaftlicher-erkenntnisse-erkennen" data-background-interactive="true">
+<h2></h2>
 </section>
 <section id="section-3" class="slide level2 center">
 <h2><!--Systematisierung (quantitativer Studien) in den Sozialwissenschaften--></h2>
@@ -663,16 +591,14 @@ Explorative Studien zielen auf die <span class="imp">Genese von Hypothesen</span
 </div>
 </div>
 </section>
-<section id="section-4" class="slide level2">
-<h2><!--Aufgabe Erkenntnisinteresse--></h2>
-<div class="sourceCode" id="cb2" data-engine="r"><pre class="sourceCode numberSource shinylive-r number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href=""></a>#| '!! shinylive warning !!': |</span>
-<span id="cb2-2"><a href=""></a>#|   shinylive does not work in self-contained HTML documents.</span>
-<span id="cb2-3"><a href=""></a>#|   Please set `embed-resources: false` in your metadata.</span>
-<span id="cb2-4"><a href=""></a>#| standalone: true</span>
-<span id="cb2-5"><a href=""></a>#| viewerHeight: 600</span>
-<span id="cb2-6"><a href=""></a></span>
-<span id="cb2-7"><a href=""></a>source("https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/methodologie/erkenntnisinteresse/server-app/app.R")</span>
-<span id="cb2-8"><a href=""></a>shinyApp(ui = ui, server = server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="aufgabe-1" class="slide level2 center">
+<h2>Aufgabe</h2>
+<blockquote>
+<p>Bearbeiten Sie Aufgaben unter <a href="https://sammerk.github.io/aufgaben-book/methodologie.html#erkenntnisinteresse-erkennen">https://sammerk.github.io/aufgaben-book/methodologie.html#erkenntnisinteresse-erkennen</a></p>
+</blockquote>
+</section>
+<section id="section-4" class="slide level2" data-background-iframe="https://sammerk.github.io/aufgaben-book/methodologie.html#erkenntnisinteresse-erkennen" data-background-interactive="true">
+<h2></h2>
 </section>
 <section id="messwiederholte-und-querschnittliche-studien" class="slide level2">
 <h2><span class="center" style="font-size: .82em">Messwiederholte und querschnittliche Studien</span></h2>
@@ -716,16 +642,14 @@ Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohing
 </div>
 </div>
 </section>
-<section id="section-5" class="slide level2">
-<h2><!--Aufgabe Erkenntnisinteresse--></h2>
-<div class="sourceCode" id="cb3" data-engine="r"><pre class="sourceCode numberSource shinylive-r number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href=""></a>#| '!! shinylive warning !!': |</span>
-<span id="cb3-2"><a href=""></a>#|   shinylive does not work in self-contained HTML documents.</span>
-<span id="cb3-3"><a href=""></a>#|   Please set `embed-resources: false` in your metadata.</span>
-<span id="cb3-4"><a href=""></a>#| standalone: true</span>
-<span id="cb3-5"><a href=""></a>#| viewerHeight: 600</span>
-<span id="cb3-6"><a href=""></a></span>
-<span id="cb3-7"><a href=""></a>source("https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/methodologie/experimentelles-design/server-app/app.R")</span>
-<span id="cb3-8"><a href=""></a>shinyApp(ui = ui, server = server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="aufgabe-2" class="slide level2 center">
+<h2>Aufgabe</h2>
+<blockquote>
+<p>Bearbeiten Sie Aufgaben unter <a href="https://sammerk.github.io/aufgaben-book/methodologie.html#designs-unterscheiden">https://sammerk.github.io/aufgaben-book/methodologie.html#designs-unterscheiden</a></p>
+</blockquote>
+</section>
+<section id="section-5" class="slide level2" data-background-iframe="https://sammerk.github.io/aufgaben-book/methodologie.html#designs-unterscheiden" data-background-interactive="true">
+<h2></h2>
 </section>
 <section id="section-6" class="slide level2 center">
 <h2><!--Steigerung der internen/externen Validität--></h2>
@@ -747,16 +671,11 @@ Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohing
 </ul>
 </div>
 </section>
-<section id="section-7" class="slide level2">
-<h2><!--Aufgabe steigerung-interne-validitaet--></h2>
-<div class="sourceCode" id="cb4" data-engine="r"><pre class="sourceCode numberSource shinylive-r number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href=""></a>#| '!! shinylive warning !!': |</span>
-<span id="cb4-2"><a href=""></a>#|   shinylive does not work in self-contained HTML documents.</span>
-<span id="cb4-3"><a href=""></a>#|   Please set `embed-resources: false` in your metadata.</span>
-<span id="cb4-4"><a href=""></a>#| standalone: true</span>
-<span id="cb4-5"><a href=""></a>#| viewerHeight: 600</span>
-<span id="cb4-6"><a href=""></a></span>
-<span id="cb4-7"><a href=""></a>source("https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/methodologie/steigerung-interne-validitaet/server-app/app.R")</span>
-<span id="cb4-8"><a href=""></a>shinyApp(ui = ui, server = server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="aufgabe-steigerung-der-internen-validität" class="slide level2 center">
+<h2>Aufgabe: Steigerung der internen Validität</h2>
+<blockquote>
+<p>Bearbeiten Sie Aufgaben unter <a href="https://sammerk.github.io/aufgaben-book/methodologie.html#erkenntnisinteresse-erkennen">https://sammerk.github.io/aufgaben-book/methodologie.html#erkenntnisinteresse-erkennen</a></p>
+</blockquote>
 </section>
 <section id="steigerung-der-externen-validität" class="slide level2 center">
 <h2>Steigerung der externen Validität</h2>
@@ -770,16 +689,102 @@ Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohing
 </ul>
 </div>
 </section>
-<section id="section-8" class="slide level2">
-<h2><!--Aufgabe steigerung-externe-validitaet--></h2>
-<div class="sourceCode" id="cb5" data-engine="r"><pre class="sourceCode numberSource shinylive-r number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href=""></a>#| '!! shinylive warning !!': |</span>
-<span id="cb5-2"><a href=""></a>#|   shinylive does not work in self-contained HTML documents.</span>
-<span id="cb5-3"><a href=""></a>#|   Please set `embed-resources: false` in your metadata.</span>
-<span id="cb5-4"><a href=""></a>#| standalone: true</span>
-<span id="cb5-5"><a href=""></a>#| viewerHeight: 600</span>
-<span id="cb5-6"><a href=""></a></span>
-<span id="cb5-7"><a href=""></a>source("https://raw.githubusercontent.com/sammerk/aufgaben/refs/heads/master/methodologie/steigerung-externe-validitaet/server-app/app.R")</span>
-<span id="cb5-8"><a href=""></a>shinyApp(ui = ui, server = server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="aufgabe-3" class="slide level2 center">
+<h2>Aufgabe</h2>
+<blockquote>
+<p>Bearbeiten Sie Aufgaben unter <a href="https://sammerk.github.io/aufgaben-book/methodologie.html#erkenntnisinteresse-erkennen">https://sammerk.github.io/aufgaben-book/methodologie.html#erkenntnisinteresse-erkennen</a></p>
+</blockquote>
+</section>
+<section id="übung" class="slide level2 smaller scrollable">
+<h2>Übung <i class="fa-solid fa-brain" aria-label="brain"></i></h2>
+<blockquote>
+<p>Ein Team von Forscher:innen untersucht die Lernförderlichkeit von <strong>formativem Feedback</strong> (<em>»du kannst Plusaufgaben schon sicher über den Zehner, übe doch als nächstes dieses Blatt mit Minusaufgaben über den Zehner«</em>) gegenüber summativem Feedback (<em>»Plusaufgaben mit Zehnerübergang 2+, Minusaufgaben mit Zehnerübergang 3-4«</em>) nach der Theorie von Hattie &amp; Timperley (2006) . Dazu ermitteln Sie mithilfe einer Videostudie, in welchen Klassen in Mathematik besonders oft formatives Feedback gegeben wird und erheben dort die fachlichen Leistungen.</p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li>Klassifizieren Sie die Studie als
+<ul>
+<li>empirisch/theoretisch/methodisch</li>
+<li>querschnittlioch/längsschnittlich</li>
+<li>explanativ/explorativ/deskriptiv</li>
+<li>experimentell/quasiexp./nicht-exp.</li>
+</ul></li>
+</ol>
+</div><div class="column" style="width:50%;">
+<ol start="2" type="1">
+<li>Angenommen die Forsch:innen sehen in den Daten, dass in diesen Klassen die Schüler*innen in einem Leistungstest tatsächlich besser abschneiden als in Klassen mit weniger formativem Feedback, kann dennoch nicht geschlussfolgert werden, dass das formative Assessment lerförderlicher ist. Warum?</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="bedrohungen-der-internen-validität-in-alltag-und-forschung" class="slide level2 center">
+<h2>Bedrohungen der internen Validität in Alltag und Forschung <i class="fa-solid fa-down-long" aria-label="down-long"></i></h2>
+</section>
+<section id="live-experiment-1" class="slide level2 smaller">
+<h2>Live-Experiment 1</h2>
+<blockquote>
+<p>Führt »richtig laut werden« in der Klasse zu verbessertem Verhalten?</p>
+</blockquote>
+<div class="fragment">
+<!-- -->
+<h4 id="regression-zur-mitte">Regression zur Mitte</h4>
+<p>Im Experiment wurde die Regression zur Mitte demonstriert. Sie ist nach Döring &amp; Bortz <span class="citation" data-cites="doering2016">(<a href="#/literatur" role="doc-biblioref" onclick="">Döring &amp; Bortz, 2016</a>)</span> wie folgt definiert: <em>Werden für eine Studie Personen mit extrem hohen oder extrem niedrigen Merkmalsausprägungen ausgesucht, so ist bei wiederholter Messung automatisch eine Tendenz zur Mitte zur erwarten, d.&nbsp;h. die Extremausprägungen (z. B. extreme Schmerzen, extreme Einstellungen) schwächen sich ab. Dieser statistische Regressionseffekt kann fälschlich als kausale Treatmentwirkung interpretiert werden. Als Gegenmaßnahme sollte möglichst nicht mit Extremgruppen, sondern mit Untersuchungspersonen üblicher Merkmalsausprägungen gearbeitet werden.</em></p>
+</div>
+</section>
+<section id="live-experiment-2" class="slide level2 smaller">
+<h2>Live-Experiment 2</h2>
+<p>Sie sehen an der Tafel vier Karten (A, D, 3, 7). Angenommen Sie wollen die Regel <span class="math inline">\(A \Rightarrow B\)</span> (wenn eine Seite der Karte A zeigt, dann zeigt die andere Seite der Karte 3) prüfen, welche Karten müssen Sie umdrehen und welche Karten nicht? <br><br></p>
+<div class="fragment">
+<blockquote>
+<p>Die Tendenz Karte A und 3 umzudrehen aber nicht Karte 7 und Karte D wird als Positive Testing Strategie bezeichnet <span class="citation" data-cites="pohl2004">(<a href="#/literatur" role="doc-biblioref" onclick="">Pohl, 2004</a>)</span>. Sie beschreibt die menschliche Tendenz zu prüfende Hypothesen verfizieren statt falsifizieren zu wollen. Als »Debiasing Stratgie« wird »Consider the Opposite« <span class="citation" data-cites="vanbrussel2020">(<a href="#/literatur" role="doc-biblioref" onclick="">van Brussel, Timmermans, Verkoeijen, &amp; Paas, 2020</a>)</span> als erfolgversprechend angesehen. Das meint, bei jeder Schlussfolgerung zu prüfen ob mit dem vorliegenden Argument auch das Gegenteil der Schlussfolgerung impliziert werden könnte.</p>
+</blockquote>
+</div>
+</section>
+<section id="experiment-3" class="slide level2 smaller">
+<h2>Experiment 3</h2>
+<p>Losen Sie mit der Nachbarin bzw. dem Nachbarn aus (z.B. Schere, Stein, Papier), wer im folgenden Experiment zuerst Proband:in und wer zuerst Versuchsleiter:in ist. Danach werde ich eine Zahlenreihe einblenden (<em>z.B. 2,4,8,16 …</em>) und nur den Versuchsleiter:innen die Regel hinter der Zahlenreihe zeigen (<em>alle geraden Zahlen</em>). <br> <br></p>
+<blockquote>
+<p>Aufgabe der Probandin bzw. des Probanden ist es herauszufinden, welche Regel hinter der Reihe steckt. Dazu darf sie aber nur Beispiele (<em>z.B. 5,10,20,40</em>) nennen und fragen ob diese auch der Regel genügen. Wenn die Versuchsperson glaubt die Regel gefunden zu haben, darf sie fragen ob die Regel stimmt (<em>z.B. muss jeder Nachfolger das doppelte vom Vorgänger sein?</em>)</p>
+</blockquote>
+</section>
+<section id="reihe-1" class="slide level2 center">
+<h2>Reihe 1</h2>
+<blockquote>
+<p>Reihe: 9, 15, 21, 27</p>
+</blockquote>
+<div class="fragment">
+<p>Regel: immer plus 6</p>
+</div>
+</section>
+<section id="reihe-2" class="slide level2 center">
+<h2>Reihe 2</h2>
+<blockquote>
+<p>Reihe: 2, 6, 18, 54</p>
+</blockquote>
+<div class="fragment">
+<p>Regel: immer mal 3</p>
+</div>
+</section>
+<section id="reihe-3" class="slide level2 center">
+<h2>Reihe 3</h2>
+<blockquote>
+<p>Reihe: 1, 2, 3, 5, 8, 13</p>
+</blockquote>
+<div class="fragment">
+<p>Regel: Nachfolger muss größer sein als Vorgänger. ACHTUNG: Die Allermeisten werden zutreffende Beispiele bringen (2,4,6,10,16) aber die falsche Regel dahinter vermuten.</p>
+</div>
+</section>
+<section id="bedrohungen-der-internen-validität-in-alltag-und-forschung-1" class="slide level2">
+<h2>Bedrohungen der internen Validität in Alltag und Forschung <i class="fa-solid fa-down-long" aria-label="down-long"></i></h2>
+<ul>
+<li>Positive Testing <span class="citation" data-cites="klayman1987">(<a href="#/literatur" role="doc-biblioref" onclick="">Klayman &amp; Ha, 1987</a>)</span></li>
+<li>Regression zur Mitte <span class="citation" data-cites="barnett2005">(<a href="#/literatur" role="doc-biblioref" onclick="">Barnett, van der Pols, &amp; Dobson, 2005</a>)</span></li>
+<li>Erwartungseffekte <span class="citation" data-cites="rosenthal1963">(<a href="#/literatur" role="doc-biblioref" onclick="">Rosenthal &amp; Fode, 1963</a>)</span></li>
+<li>Confirmation Bias <span class="citation" data-cites="nickerson1998">(<a href="#/literatur" role="doc-biblioref" onclick="">Nickerson, 1998</a>)</span></li>
+<li>Anchorbias <span class="citation" data-cites="lieder2018">(<a href="#/literatur" role="doc-biblioref" onclick="">Lieder, Griffiths, M. Huys, &amp; Goodman, 2018</a>)</span></li>
+</ul>
+<!-- Hier hätte der Samuel gerne noch 1-2 Studien um deren interne Validität zu besprechen -->
 </section>
 <section id="literatur" class="slide level2 smaller scrollable">
 <h2>Literatur</h2>
@@ -793,6 +798,9 @@ div.callout {border-left-color: #8cd000 !important;
 </div>
 </div>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-barnett2005" class="csl-entry" role="listitem">
+Barnett, A. G., van der Pols, J. C., &amp; Dobson, A. J. (2005). <a href="https://doi.org/10.1093/ije/dyh299">Regression to the mean: What it is and how to deal with it</a>. <em>International Journal of Epidemiology</em>, <em>34</em>(1), 215–220.
+</div>
 <div id="ref-campbell1957a" class="csl-entry" role="listitem">
 Campbell, D. T. (1957). <a href="https://doi.org/10.1037/h0040950">Factors relevant to the validity of experiments in social settings</a>. <em>Psychological Bulletin</em>, <em>54</em>(4), 297–312.
 </div>
@@ -805,11 +813,29 @@ Döring, N., &amp; Bortz, J. (2016). <em><span>Forschungsmethoden und Evaluation
 <div id="ref-engzell_learning_2021" class="csl-entry" role="listitem">
 Engzell, P., Frey, A., &amp; Verhagen, M. D. (2021). <a href="https://doi.org/10.1073/pnas.2022376118">Learning loss due to school closures during the <span>COVID</span>-19 pandemic</a>. <em>Proceedings of the National Academy of Sciences</em>, <em>118</em>(17), e2022376118.
 </div>
+<div id="ref-klayman1987" class="csl-entry" role="listitem">
+Klayman, J., &amp; Ha, Y. (1987). <a href="https://doi.org/10.1037/0033-295X.94.2.211">Confirmation, disconfirmation, and information in hypothesis testing</a>. <em>Psychological Review</em>, <em>94</em>(2), 211–228.
+</div>
+<div id="ref-lieder2018" class="csl-entry" role="listitem">
+Lieder, F., Griffiths, T. L., M. Huys, Q. J., &amp; Goodman, N. D. (2018). <a href="https://doi.org/10.3758/s13423-017-1286-8">The anchoring bias reflects rational use of cognitive resources</a>. <em>Psychonomic Bulletin &amp; Review</em>, <em>25</em>(1), 322–349.
+</div>
 <div id="ref-meier_persistent_2012" class="csl-entry" role="listitem">
 Meier, M. H., Caspi, A., Ambler, A., Harrington, H., Houts, R., Keefe, R. S. E., … Moffitt, T. E. (2012). <a href="https://doi.org/10.1073/pnas.1206820109">Persistent cannabis users show neuropsychological decline from childhood to midlife</a>. <em>Proceedings of the National Academy of Sciences</em>, <em>109</em>(40), E2657–E2664.
 </div>
+<div id="ref-nickerson1998" class="csl-entry" role="listitem">
+Nickerson, R. S. (1998). <a href="https://doi.org/10.1037/1089-2680.2.2.175">Confirmation bias: <span>A</span> ubiquitous phenomenon in many guises</a>. <em>Review of General Psychology</em>, <em>2</em>(2), 175–220.
+</div>
+<div id="ref-pohl2004" class="csl-entry" role="listitem">
+Pohl, R. (Ed.). (2004). <em>Cognitive illusions: <span>A</span> handbook on fallacies and biases in thinking, judgement and memory</em>. <span>Hove ; New York</span>: <span>Psychology Press</span>.
+</div>
+<div id="ref-rosenthal1963" class="csl-entry" role="listitem">
+Rosenthal, R., &amp; Fode, K. L. (1963). <a href="https://doi.org/10.1002/bs.3830080302">The effect of experimenter bias on the performance of the albino rat</a>. <em>Behavioral Science</em>, <em>8</em>(3), 183–189.
+</div>
 <div id="ref-sander_stereotypenbedrohung_2018" class="csl-entry" role="listitem">
 Sander, A., Ohle, A., McElvany, N., Zander, L., &amp; Hannover, B. (2018). <a href="https://doi.org/10.1007/s11618-017-0763-1">Stereotypenbedrohung als <span>Ursache</span> für geringeren <span>Wortschatzzuwachs</span> bei <span>Grundschulkindern</span> mit <span>Migrationshintergrund</span></a>. <em>Zeitschrift Für Erziehungswissenschaft</em>, <em>21</em>(1), 177–197.
+</div>
+<div id="ref-vanbrussel2020" class="csl-entry" role="listitem">
+van Brussel, S., Timmermans, M., Verkoeijen, P., &amp; Paas, F. (2020). <a href="https://doi.org/10.1016/j.cedpsych.2020.101844"><span>“<span>Consider</span> the opposite”</span> <span>Effects</span> of elaborative feedback and correct answer feedback on reducing confirmation bias <span>A</span> pre-registered study</a>. <em>Contemporary Educational Psychology</em>, <em>60</em>, 101844.
 </div>
 </div>
 </section>
