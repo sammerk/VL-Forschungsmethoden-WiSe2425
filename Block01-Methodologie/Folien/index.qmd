@@ -162,8 +162,9 @@ Im Bereich der quantitativen empirischen Sozialforschung sind die folgenden Krit
 > Die externe Validität einer Studie beschreibt inwiefern sich die Schlussfolgerungen einer Studie (auf andere Proband\*innen, Zeiten, etc.) verallgemeinern lassen [siehe @campbell1957a].
 
 
-## Aufgabe
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html#gütekriterien-wissenschaftlicher-erkenntnisse-erkennen](https://sammerk.github.io/aufgaben-book/methodologie.html#gütekriterien-wissenschaftlicher-erkenntnisse-erkennen)
+## Aufgabe {.center}
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html](https://sammerk.github.io/aufgaben-book/methodologie.html) <br> <br> $\Rightarrow$ Gütekriterien wiss. Erkenntnis erkennen
+
 
 ## <!--Systematisierung (quantitativer Studien) in den Sozialwissenschaften--> {.center}
 [{{< fa map >}} Systematisierung (quantitativer Studien) in den Sozialwissenschaften]{.em15 .c .imp}
@@ -357,7 +358,8 @@ geringer als in der Kontrollbedingung. [...]"
 :::
 
 ## Aufgabe {.center}
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html#erkenntnisinteresse-erkennen](https://sammerk.github.io/aufgaben-book/methodologie.html#erkenntnisinteresse-erkennen)
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html](https://sammerk.github.io/aufgaben-book/methodologie.html) <br> <br> $\Rightarrow$ Erkenntnisinteresse erkennen
+
 
 ## [Messwiederholte und querschnittliche Studien]{style="font-size: .82em" .center}
 ::: {style="font-size: 0.65em"}
@@ -390,7 +392,7 @@ Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohing
 
 
 ## Aufgabe {.center}
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html#designs-unterscheiden](https://sammerk.github.io/aufgaben-book/methodologie.html#designs-unterscheiden)
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html](https://sammerk.github.io/aufgaben-book/methodologie.html) <br> <br> $\Rightarrow$ Designs unterscheiden
 
 
 ## <!--Steigerung der internen/externen Validität--> {.center}
@@ -410,9 +412,9 @@ Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohing
 * Präregistrierung
 :::
 
-## Aufgabe {.center}
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html#steigerung-der-internen-validitaet](https://sammerk.github.io/aufgaben-book/methodologie.html#steigerung-der-internen-validitaet)
 
+## Aufgabe {.center}
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html](https://sammerk.github.io/aufgaben-book/methodologie.html) <br> <br> $\Rightarrow$ Steigerung der internen Validitaet
 
 
 ## Steigerung der externen Validität {.center}
@@ -424,8 +426,9 @@ Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohing
 * Konzeptuelle Replikationsstudien
 :::
 
+
 ## Aufgabe {.center}
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html#steigerung-der-externen-validitaet](https://sammerk.github.io/aufgaben-book/methodologie.html#steigerung-der-externen-validitaet)
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html](https://sammerk.github.io/aufgaben-book/methodologie.html) <br> <br> $\Rightarrow$ Steigerung der externen Validitaet
 
 
 ## Übung {{< fa brain >}} {.smaller .scrollable}
