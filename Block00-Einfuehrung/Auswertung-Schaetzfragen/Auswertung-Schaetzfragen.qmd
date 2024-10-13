@@ -1,0 +1,106 @@
+---
+title: "Auswertung Schätzfragen"
+author: "Samuel Merk & Cora Parrisius"
+format: html
+editor: visual
+---
+
+# Download der Daten
+
+```{r}
+library(tidyverse)
+source("https://survey.ph-karlsruhe.de/PISA22-einschaetzen/?act=oPAF8Chqu9MExebQDfSwWC2F&vQuality&rScript")
+ds <- 
+  ds |>
+  filter(lubridate::ymd_hms(STARTED) > lubridate::ymd_hms("2023-10-10 08:00:00"))
+```
+
+# Wie viele Studis haben mitgemacht?
+
+```{r}
+nrow(ds)
+```
+
+# Prozentschätzfragen
+
+## Rohwerte
+
+```{r}
+library(hrbrthemes)
+ds |> 
+  as_tibble() %>% 
+  select(G006_02, G006_03, G006_01) %>% 
+  na.omit() %>% 
+  mutate_all(function(x) ifelse(x == -9, NA, x)) %>% 
+  mutate(`Anteil Lehrer:innen` = G006_02,
+         `Anteil Übergang Gymnasium` = G006_03,
+         `Anteil Autismuspektrumsstörung` = G006_01) |>
+  pivot_longer(cols = c(`Anteil Lehrer:innen`, 
+                        `Anteil Übergang Gymnasium`,
+                        `Anteil Autismuspektrumsstörung`),
+               names_to = "Aufgabe", 
+               values_to = "Ihre Schätzung") %>% 
+  mutate(dummy = 1) |> 
+  ggplot(aes(x = `Ihre Schätzung`, y = dummy)) +
+    geom_jitter(alpha = .6, color = "#8cd000") +
+    geom_vline(data = tibble(`Ihre Schätzung` = c(0.9, 45, 0.8),
+                             Aufgabe = c("Anteil Lehrer:innen",
+                                         "Anteil Übergang Gymnasium",
+                                         "Anteil Autismuspektrumsstörung")),
+               aes(xintercept = `Ihre Schätzung`)) +
+    facet_wrap(~ Aufgabe, ncol = 1) +
+    theme_minimal() +
+    ylab("") +
+    theme(axis.text.y = element_blank())
+  
+
+```
+
+Die wahren Werte liegen bei:
+
+- Laut Mikrozensus 2021: 790.000 Lehrkräfte insgesamt (ca. 0.9%) an allg. oder beruflichen Schulen
+- Laut Statistischem Landesamt Baden-Württemberg gingen 45% der Grundschüler:innen im SJ22/23 an ein Gymnasium über
+- Der Verband der Ersatzkassen meldet für das Jahr 2022 eine Prävalenz der Autismusprektrumsstörung von 0.8% 
+
+# Effektgröße Leseverständnis PISA 2015 vs. PISA 2022
+## Design
+
+Es wurde von der Surveysoftware ausgelost, welchen der beiden folgenden Plots Sie gesehen haben:
+
+:::: {.columns}
+
+::: {.column width='50%'}
+![Originalgrafik aus taz](PISA_verlauf.jpeg)
+:::
+
+::: {.column width='50%'}
+![Überlappungsgrafik](true_eff.png)
+:::
+
+::::
+
+
+```{r}
+ds %>% 
+  select(CASE, G001_01, G003_01, G004_01, ZG01) |>
+  gather(Stimulus, `Probability of Superiority`,-CASE,-ZG01,-G001_01) |>
+  mutate(
+    Stimulus = case_when(
+      Stimulus == "G003_01" ~ "Originalgrafik taz",
+      Stimulus == "G004_01" ~ "Überlappungsgrafik"
+    ),
+    `Probability of Superiority` = ifelse(`Probability of Superiority` < 0, 
+                                          NA,
+                                          `Probability of Superiority`),
+   `Probability of Superiority` = (`Probability of Superiority` - 50) /
+      200 + .75
+  ) |> 
+  ggplot(aes(Stimulus, `Probability of Superiority`)) +
+  geom_violin() +
+  ggforce::geom_sina() + 
+  stat_summary(fun.data = mean_sdl, fun.args = list(mult = 1),
+               color = "#8cd000") +
+  theme_minimal() +
+  ggtitle("")
+```
+
