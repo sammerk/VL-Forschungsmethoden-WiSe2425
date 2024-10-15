@@ -119,10 +119,10 @@ data <- data.frame(
 data <- data.frame(
   #id      = 1:4,
   content = c("Erstes SE",
-              "Promotion Tü", "Post-Doc. Tü", "Jun. Prof. KA"),
-  start   = c("2010-01-10","2016-07-10", 
-              "2017-04-01", "2020-04-01"),
-  end     = c(rep(NA, 4))
+              "Promotion Tü", "Jun. Prof. KA"),
+  start   = c("2018-01-10",
+              "2021-04-01", "2022-04-01"),
+  end     = c(rep(NA, 3))
 )
 
 timevis(data, 
@@ -346,8 +346,12 @@ tibble(
 
 * In der Vorlesung werden die Inhalte eingeführt und elaboriert
 * Im Tutorium können Sie ab VL-Woche 2 freiwillig üben
-    * Gruppe 1: Mo.	08:00-09:30, XX, Linda Hammann	 
-    * Gruppe 2: Mi.	10:00-11:30, 1.103, Florian Kühlwein
+    * Gruppe 1: Mo. 10:00-11:30, tba, Linda Hammann (ab 28.10.)
+    * Gruppe 2: Di. 10:00-11:30, tba, Fabian Burkart (ab 29.10.)
+    * Gruppe 3: Mi. 10:00-11:30, 1.103, Florian Kühlwein (ab 23.10.)
+    * Gruppe 4: Do. 14:30-16:00, tba, Linda Hammann (ab 24.10.)
+    
+Weitere Information (sowie Bekanntgabe der Räume) finden Sie unter: [https://bit.ly/fome001](https://bit.ly/fome001){.imp}
 
 ## Klausur {.smaller}
 * 6 fakultative Teilklausuren, zu Beginn jeder zweiten Vorlesung
