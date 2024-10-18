@@ -13,7 +13,7 @@ library(tidyverse)
 source("https://survey.ph-karlsruhe.de/PISA22-einschaetzen/?act=oPAF8Chqu9MExebQDfSwWC2F&vQuality&rScript")
 ds <- 
   ds %>%
-  filter(lubridate::ymd_hms(STARTED) > lubridate::ymd_hms("2023-10-10 08:00:00"))
+  filter(lubridate::ymd_hms(STARTED) > lubridate::ymd_hms("2021-10-16 16:00:00"))
 ```
 
 # Wie viele Studis haben mitgemacht?
@@ -59,27 +59,25 @@ ds %>%
 
 Die wahren Werte liegen bei:
 
-- Laut Mikrozensus 2021: 790.000 Lehrkräfte insgesamt (ca. 0.9%) an allg. oder beruflichen Schulen
-- Laut Statistischem Landesamt Baden-Württemberg gingen 45% der Grundschüler:innen im SJ22/23 an ein Gymnasium über
-- Der Verband der Ersatzkassen meldet für das Jahr 2022 eine Prävalenz der Autismusprektrumsstörung von 0.8% 
+-   Laut Mikrozensus 2021: 790.000 Lehrkräfte insgesamt (ca. 0.9%) an allg. oder beruflichen Schulen
+-   Laut Statistischem Landesamt Baden-Württemberg gingen 45% der Grundschüler:innen im SJ22/23 an ein Gymnasium über
+-   Der Verband der Ersatzkassen meldet für das Jahr 2022 eine Prävalenz der Autismusprektrumsstörung von 0.8%
 
 # Effektgröße Leseverständnis PISA 2015 vs. PISA 2022
+
 ## Design
 
 Es wurde von der Surveysoftware ausgelost, welchen der beiden folgenden Plots Sie gesehen haben:
 
-:::: {.columns}
-
-::: {.column width='50%'}
+::::: columns
+::: {.column width="50%"}
 ![Originalgrafik aus taz](PISA_verlauf.jpeg)
 :::
 
-::: {.column width='50%'}
+::: {.column width="50%"}
 ![Überlappungsgrafik](true_eff.png)
 :::
-
-::::
-
+:::::
 
 ```{r}
 ds %>% 
@@ -105,13 +103,14 @@ ds %>%
   ggtitle("")
 ```
 
-
 # Überlappung Erst- und Dritt- vs. Erst- und Sechsklässler
-## Design
-Wieder wurde zufällig entschieden ob Sie eine Grafik für die Körpergrößern von 
 
-* Erst- und Drittklässer:innen oder 
-* Erst- und Sechsklässler:innen bauen sollten
+## Design
+
+Wieder wurde zufällig entschieden ob Sie eine Grafik für die Körpergrößern von
+
+-   Erst- und Drittklässer:innen oder
+-   Erst- und Sechsklässler:innen bauen sollten
 
 ```{r}
 
@@ -132,4 +131,3 @@ ds %>%
   
 
 ```
-
