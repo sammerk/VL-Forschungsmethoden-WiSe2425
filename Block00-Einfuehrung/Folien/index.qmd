@@ -387,6 +387,28 @@ Weitere Information (sowie Bekanntgabe der Räume) finden Sie unter: [https://bi
 :::
 
 <center>[Ein Beispiel für die Verrechnung von Teil- und Hauptklausur]{style="font-size:.5em;"}</center>
+
+## {.smaller}
+### Aus unserer Rahmenprüfungsordnung
+> [...] sind bestanden, wenn die oder der Studierende mindestens [60 Prozent der zu erreichenden Gesamtpunktzahl]{.imp} erreicht hat. Die Prüfung ist auch bestanden, wenn die vom Prüfling erreichte Punktzahl um nicht mehr als 20 Prozent die durchschnittlichen Prüfungsleistungen aller Prüfungsteilnehmerinnen und Prü- fungsteilnehmer an dieser Prüfung unterschreitet (relative Bestehensgrenze). Kommt die relative Bestehensgrenze zur Anwendung, so müssen für das Bestehen der Prüfung mindestens 50 Prozent der möglichen Gesamtpunkte erreicht werden.
+
+
+## Anforderungen {.center}
+* Sie bekommen 3CP $\Rightarrow \frac{3 \cdot 30h}{15\;Wochen} = 6\frac{h}{Woche}$ 
+* Meine Prognose: Wenn Sie diese Zeit investieren, bestehen Sie die Klausur recht sicher 
+* Befragung aus dem Wintersemester22/23: Über 90% der Studierenden bringt weniger Zeit auf als durch die CP gefordert
+* Klausuraufgaben enthalten die gleichen Konzepte wie die formativen Übungsaufgaben
+
+## <!-- Image -->{background-image="img/klausur_dist.png" background-size="contain"}
+
+## <!-- Image -->{background-image="img/practice_resultsWiSe2223.png" background-size="contain"}
+
+## Vorschlag »Studierverhalten« {.smaller}
+1. Vorlesung
+   * Anwesenheit und aktive Teilnahme
+2. evtl. Tutorium oder Materialien aus dem Tutorium
+3. Selbststudium (20-60 Minuten pro Woche)
+
 ## Ihre Fragen {.center}
 
 
