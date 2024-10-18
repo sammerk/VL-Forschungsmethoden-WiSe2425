@@ -46,11 +46,15 @@ close(fileConn)
 
 . . .
 
-[{{< fa microscope >}}]{.imp} Wissenschaft vs. nicht-Wissenschaft  
+[{{< fa sitemap >}}]{.imp} Organisatorisches
+
+. . .
+
+[{{< fa microscope >}}]{.imp} Wissenschaft vs. Nicht-Wissenschaft  
 
 . . .  
 
-[{{< fa ruler >}}]{.imp} Kriterien Wissenschaftlicher Qualität  
+[{{< fa ruler >}}]{.imp} Kriterien wissenschaftlicher Qualität  
 
 . . .
 
@@ -64,8 +68,20 @@ close(fileConn)
 
 [{{< fa brain >}}]{.imp } Übung & Anwendung
 
-## <!--Wissenschaft vs. nicht-Wissenschaft--> {.center}
-[{{< fa microscope >}} Wissenschaft vs. nicht-Wissenschaft]{.em15 .c .imp}
+
+## Organisatorisches {.smaller .center}
+
+> Änderungen bzgl. der begleitenden Tutorien
+
+Im Tutorium können Sie ab VL-Woche 2 freiwillig üben
+
+* Gruppe 1: Mo. 10:00-11:30, [3.301]{.imp}, Linda Hammann (**ab 28.10.**)
+* Gruppe 2: Di. [16:30-18:00]{.imp}, tba, Fabian Burkart (**ab 29.10.**)
+* Gruppe 3: Mi. 10:00-11:30, 1.103, Florian Kühlwein (**ab 23.10.**)
+* Gruppe 4: Do. 14:30-16:00, [1.013]{.imp}, Linda Hammann (**ab 24.10.**)
+
+## <!--Wissenschaft vs. Nicht-Wissenschaft--> {.center}
+[{{< fa microscope >}} Wissenschaft vs. Nicht-Wissenschaft]{.em15 .c .imp}
 
 ## Das Abgrenzungsproblem {.smaller auto-animate=true .center}
 ![](img/wiss_meme.png)
@@ -89,8 +105,8 @@ Wer wissenschaftliche Forschung („scientific research") betreibt, sucht mithil
 
 ::: {.callout-tip icon=false collapse="false"}
 ## {{< fa book-open >}} Weiterführende Literatur
-Lakatos, I. (1977). The Methodology of Scientific Research Programmes: Philosophical Papers Volume I. Cambridge University Press.  
-Kuhn, Thomas S. (1962). The Structure of Scientific Revolutions. University of Chicago Press.    
+Lakatos, I. (1977). The methodology of scientific research programmes: Philosophical papers Volume I. Cambridge University Press.  
+Kuhn, Thomas S. (1962). The structure of scientific revolutions. University of Chicago Press.    
 Popper, K. (1989). Logik der Forschung. Mohr.
 :::
 
@@ -154,16 +170,16 @@ Im Bereich der quantitativen empirischen Sozialforschung sind die folgenden Krit
 ## Definition: Interne Validität {.center .smaller}
 <br>
 
-> Die interne Validität einer Studie beschreibt inwiefern die untersuchten Variablenzusammenhänge als kausal (Ursache-Wirkungs-Relation) interpretiert werden können [siehe @campbell1957a].
+> Die interne Validität einer Studie beschreibt, inwiefern die untersuchten Variablenzusammenhänge als kausal (Ursache-Wirkungs-Relation) interpretiert werden können [siehe @campbell1957a].
 
 ## Definition: Externe Validität {.center .smaller}
 <br>
 
-> Die externe Validität einer Studie beschreibt inwiefern sich die Schlussfolgerungen einer Studie (auf andere Proband\*innen, Zeiten, etc.) verallgemeinern lassen [siehe @campbell1957a].
+> Die externe Validität einer Studie beschreibt, inwiefern sich die Schlussfolgerungen einer Studie (auf andere Proband:innen, Zeiten, etc.) verallgemeinern lassen [siehe @campbell1957a].
 
 
 ## Aufgabe {.center}
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html](https://sammerk.github.io/aufgaben-book/methodologie.html) <br> <br> $\Rightarrow$ Gütekriterien wiss. Erkenntnis erkennen
+> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/methodologie.html](https://sammerk.github.io/aufgaben-book/methodologie.html) <br> <br> $\Rightarrow$ Abschnitt: Gütekriterien wiss. Erkenntnis erkennen
 
 
 ## <!--Systematisierung (quantitativer Studien) in den Sozialwissenschaften--> {.center}
@@ -364,7 +380,7 @@ geringer als in der Kontrollbedingung. [...]"
 ## [Messwiederholte und querschnittliche Studien]{style="font-size: .82em" .center}
 ::: {style="font-size: 0.65em"}
 > Bei [querschnittlichen Studien]{.imp} wird nur einmalig gemessen.  
-[Längsschnittliche Studien]{.imp} messen dieselben Variablen bei denselben Merkmalsträgern zu mehreren Zeitpunkten.  
+[Längsschnittliche Studien]{.imp} messen dieselben Variablen bei denselben Merkmalsträger:innen zu mehreren Zeitpunkten.  
 [Trendstudien]{.imp} messen dieselben Variablen derselben Grundgesamtheit (Population) zu mehreren Zeitpunkten.  
 :::
 
@@ -374,12 +390,12 @@ geringer als in der Kontrollbedingung. [...]"
 
 ## Laborstudie, Feldstudie {.smaller .center}
 > Als [Laborstudien]{.imp} bezeichent man Studien, die in einer künstlich kontrollierbaren Umgebung stattfinden.  
-Bei [Feldstudien]{.imp} werden die Merkmalsträger in ihrer natürlichen Umgebung untersucht. 
+Bei [Feldstudien]{.imp} werden die Merkmalsträger:innen in ihrer natürlichen Umgebung untersucht. 
 
 
 ## [Experiment, Quasi- und Nicht-Experiment]{style="font-size:.91em"} {.smaller}
 ::: {style="font-size:.8em"}
-> [Experimente und Quasiexperimente]{.imp} teilen Proband\*innen in Gruppen ein, welche Sie unterschiedlichen Interventionen (auch »Behandlungen« oder »Treatments«) unterziehen.  
+> [Experimente und Quasiexperimente]{.imp} teilen Proband:innen in Gruppen ein, welche Sie unterschiedlichen Interventionen (auch »Behandlungen« oder »Treatments«) unterziehen.  
 [Nicht-Experimente]{.imp} verzichten hierauf.  
 Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohingegen die Gruppen bei Quasi-Experimenten durch andere Mechanismen zustande kommen oder bereits feststehen.
 :::
@@ -446,7 +462,7 @@ Bei Experimenten liegt die Gruppeneinteilung in der Hand der Forschenden, wohing
 :::
 
 ::: {.column width='50%'}
-2) Angenommen die Forsch:innen sehen in den Daten, dass in diesen Klassen die Schüler*innen in einem Leistungstest tatsächlich besser abschneiden als in Klassen mit weniger formativem Feedback, kann dennoch nicht geschlussfolgert werden, dass das formative Assessment lerförderlicher ist. Warum?
+2) Angenommen die Forsch:innen sehen in den Daten, dass in diesen Klassen die Schüler:innen in einem Leistungstest tatsächlich besser abschneiden als in Klassen mit weniger formativem Feedback, kann dennoch nicht geschlussfolgert werden, dass das formative Assessment lerförderlicher ist. Warum?
 :::
 
 ::::
@@ -468,7 +484,7 @@ Sie sehen an der Tafel vier Karten (A, D, 3, 7). Angenommen Sie wollen die Regel
 <br><br>
 
 ::: {.fragment}
-> Die Tendenz Karte A und 3 umzudrehen aber nicht Karte 7 und Karte D wird als Positive Testing Strategie bezeichnet [@pohl2004]. Sie beschreibt die menschliche Tendenz zu prüfende Hypothesen verfizieren statt falsifizieren zu wollen. Als »Debiasing Stratgie« wird »Consider the Opposite« [@vanbrussel2020] als erfolgversprechend angesehen. Das meint, bei jeder Schlussfolgerung zu prüfen ob mit dem vorliegenden Argument auch das Gegenteil der Schlussfolgerung impliziert werden könnte.
+> Die Tendenz, Karte A und 3 umzudrehen aber nicht Karte 7 und Karte D, wird als Positive Testing Strategie bezeichnet [@pohl2004]. Sie beschreibt die menschliche Tendenz zu prüfende Hypothesen verfizieren statt falsifizieren zu wollen. Als »Debiasing Strategie« wird »Consider the Opposite« [@vanbrussel2020] als erfolgversprechend angesehen. Das meint, bei jeder Schlussfolgerung zu prüfen, ob mit dem vorliegenden Argument auch das Gegenteil der Schlussfolgerung impliziert werden könnte.
 :::
 
 ## Experiment 3 {.smaller}
@@ -476,7 +492,7 @@ Losen Sie mit der Nachbarin bzw. dem Nachbarn aus (z.B. Schere, Stein, Papier), 
 Danach werde ich eine Zahlenreihe einblenden (*z.B. 2,4,8,16 ...*) und nur den Versuchsleiter:innen die Regel hinter der Zahlenreihe zeigen (*alle geraden Zahlen*).
 <br> <br>
 
-> Aufgabe der Probandin bzw. des Probanden ist es herauszufinden, welche Regel hinter der Reihe steckt. Dazu darf sie aber nur Beispiele (*z.B. 5,10,20,40*) nennen und fragen ob diese auch der Regel genügen. Wenn die Versuchsperson glaubt die Regel gefunden zu haben, darf sie fragen ob die Regel stimmt (*z.B. muss jeder Nachfolger das doppelte vom Vorgänger sein?*)
+> Aufgabe der Probandin bzw. des Probanden ist es herauszufinden, welche Regel hinter der Reihe steckt. Dazu darf sie bzw. er aber nur Beispiele (*z.B. 5,10,20,40*) nennen und fragen, ob diese auch der Regel genügen. Wenn die Versuchsperson glaubt, die Regel gefunden zu haben, darf sie fragen, ob die Regel stimmt (*z.B. muss jeder Nachfolger das doppelte vom Vorgänger sein?*)
 
 ## Reihe 1 {.center}
 
