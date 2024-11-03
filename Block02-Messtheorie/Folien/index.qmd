@@ -118,7 +118,7 @@ Steyer, R., & Eid, M. (2013). Messen und Testen. Springer-Verlag.
 :::
 
 ## Aufgabe
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#zuordnungen-als-homomorphismus-identifizieren](https://sammerk.github.io/aufgaben-book/messtheorie.html#zuordnungen-als-homomorphismus-identifizieren)
+> Bearbeiten Sie mehrere Versionen der **Aufgabe 2.1** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
 
 
 ## <!--Typologien von Variablen--> {.center}
@@ -138,7 +138,7 @@ tibble(Skalenniveau = c("Nominalskala", "Ordinalskala", "Intervallskala"),
 ```
 
 ## Aufgabe
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#skalenniveaus-erkennen](https://sammerk.github.io/aufgaben-book/messtheorie.html#skalenniveaus-erkennen)
+> Bearbeiten Sie mehrere Versionen der **Aufgabe 2.2** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
 
 ## Typologie II: Inferenzniveau {.smaller .center}
 > Das Inferenzniveau einer Variable beschreibt, in welchem Ausmaß bei einer Messung geschlussfolgert/abstrahiert wird [@lotz2013a].
@@ -164,7 +164,7 @@ tibble(Skalenniveau = c("Nominalskala", "Ordinalskala", "Intervallskala"),
 ::::
 
 ## Aufgabe
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#inferenzniveau-zuordnen](https://sammerk.github.io/aufgaben-book/messtheorie.html#inferenzniveau-zuordnen)
+> Bearbeiten Sie mehrere Versionen der **Aufgabe 2.3** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
 
 
 ## [Typologie  III: Theo. Kausalzusammenhang]{style="font-size:0.9em"} {.smaller}
@@ -189,11 +189,7 @@ Pearl, J., Glymour, M., & Jewell, N. P. (2016). Causal inference in statistics: 
 
 
 ## Aufgabe
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#abhängige-variable-identifizieren](https://sammerk.github.io/aufgaben-book/messtheorie.html#abhängige-variable-identifizieren)
-
-
-## Aufgabe
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#abhängige-unabhängige-und-moderatorvariable-in-abstract-identifizieren](https://sammerk.github.io/aufgaben-book/messtheorie.html#abhängige-unabhängige-und-moderatorvariable-in-abstract-identifizieren)
+> Bearbeiten Sie mehrere Versionen der **Aufgaben 2.4, 2.5 & 2.6** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
 
 
 ## <!--Gütekriterien einer Messung--> {.center}
@@ -244,7 +240,7 @@ Das Ausmaß der theoretischen und empirischen Belege für die Angemessenheit der
 :::
 
 ## Aufgabe
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#guetekriterien-einer-messung-erkennen](https://sammerk.github.io/aufgaben-book/messtheorie.html#guetekriterien-einer-messung-erkennen)
+> Bearbeiten Sie mehrere Versionen der **Aufgabe 2.7** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
 
 
 ## <!--(Einige) Erhebungsverfahren--> {.center}
@@ -398,7 +394,7 @@ Unter Bezugsnormen versteht man den ‚Standard‘, der zur Bewertung einer Leis
 * Lehrerinnen und Lehrer wenden in der Praxis wohl meist implizit eine Mischung von Bezugsnormen an. Dies senkt die Konstruktvalidität der Leistungsmessung
 
 ## Aufgabe
-> Bearbeiten Sie Aufgaben unter [https://sammerk.github.io/aufgaben-book/messtheorie.html#bezugsnormen-in-aussagen-erkennen](https://sammerk.github.io/aufgaben-book/messtheorie.html#bezugsnormen-in-aussagen-erkennen)
+> Bearbeiten Sie mehrere Versionen der **Aufgabe 2.9** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
 
 
 ## Leistungsmessung in der Bildungsforschung {.smaller}
