@@ -189,7 +189,7 @@ Pearl, J., Glymour, M., & Jewell, N. P. (2016). Causal inference in statistics: 
 
 
 ## Aufgabe
-> Bearbeiten Sie mehrere Versionen der **Aufgaben 2.4, 2.5 & 2.6** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
+> Bearbeiten Sie mehrere Versionen der **Aufgaben 2.4 & 2.5** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
 
 
 ## <!--Gütekriterien einer Messung--> {.center}
