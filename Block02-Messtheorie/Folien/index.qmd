@@ -240,7 +240,7 @@ Das Ausmaß der theoretischen und empirischen Belege für die Angemessenheit der
 :::
 
 ## Aufgabe
-> Bearbeiten Sie mehrere Versionen der **Aufgabe 2.7** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
+> Bearbeiten Sie mehrere Versionen der **Aufgabe 2.6** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
 
 
 ## <!--(Einige) Erhebungsverfahren--> {.center}
@@ -394,9 +394,9 @@ Unter Bezugsnormen versteht man den ‚Standard‘, der zur Bewertung einer Leis
 * Lehrerinnen und Lehrer wenden in der Praxis wohl meist implizit eine Mischung von Bezugsnormen an. Dies senkt die Konstruktvalidität der Leistungsmessung
 
 ## Aufgabe
-> Bearbeiten Sie mehrere Versionen der **Aufgabe 2.9** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
+> Bearbeiten Sie mehrere Versionen der **Aufgabe 2.7** unter [https://ogy.de/mvl-messtheorie](https://ogy.de/mvl-messtheorie)
 
-
+<!--
 ## Leistungsmessung in der Bildungsforschung {.smaller}
 In der Bildungsforschung werden statistische Modelle zur Konstruktion von Leistungsmessungsinstrumenten herangezogen. Das am weitesten verbreitetste Modell ist die sogenannte Item-Response-Theorie [@kelava2020]. Diese postuliert unter anderem, dass die Wahrscheinlichkeit, dass eine Schüler:in $p$ eine Testfrage $i$ richtig beantwortet $P(X_{pi} = 1)$ lediglich von der Schwierigkeit der Frage $\beta_i$ und der Ausprägung der Leistung der Schüler:in $\theta$ abhängt, wobei diese Größen wie folgt in Beziehung stehen.
 $$
@@ -413,7 +413,7 @@ Lehrkräfte kommen bei der Durchführung von Vergleichsarbeiten, Lernstandserheb
 Sog. diagnosegeleitete Förderung oder Lernverlaufsdiagnostik vereint die Vorteile von wiss. Leistungsmessung (Obj., Rel., Konstruktval.) mit den Vorteilen formativen Assessments [@souvignier2014].  
 Befunde aus der Leseförderungsforschung implizieren etwa klar die Notwendigkeit der gestuften Förderung von Leserichtigkeit, Leseflüssigkeit und Textverständnis. Proprietäre und lizenzoffene Diagnoseplattformen wie [www.quop.de](www.quop.de) oder [www.levumi.de](www.levumi.de) erlauben Lehrkräften die konstruktvalide Erfassung von Lernständen bzgl. spezifischer Kompetenzen und bieten passgenaues, differenziertes Fördermaterial an [@blumenthalstefan2022].
 
-<!-- Hier hätte der Samuel gerne noch 1-2 Studien um deren interne Validität zu besprechen 
+Hier hätte der Samuel gerne noch 1-2 Studien um deren interne Validität zu besprechen 
 z.B. 
 
 Collins, M., & Lundstedt, J. (2024). The effects of more informative grading on student outcomes. Journal of Economic Behavior & Organization, 218, 514–549. https://doi.org/10.1016/j.jebo.2023.12.001
