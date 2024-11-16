@@ -320,245 +320,250 @@ $$IQR = \left[\text{Quartil 1}; \text{Quartil 3} \right] $$
 
 
 ## Einige grafische Darstellungen {.center}
-```{text}
-#| eval: false
+<!--
+```{shinylive-r}
 #| standalone: true
 #| viewerHeight: 600
 
-# library(shiny)
-# library(ggplot2)
-# library(dplyr)
-# library(tidyr)
-# library(Hmisc)
-# library(thematic)
-# library(bslib)
-# 
-# 
-# 
-# ui <- fluidPage(
-#    theme = bs_theme(
-#  #    heading_font = font_google("Source Sans Pro"),
-#  #    base_font = font_google("Source Sans Pro"),
-#      preset = "shiny",
-#  #   bg = "#ffffff",
-#  #   fg = "#000",
-#     primary = "#8cd000"
-#      ),
-#    
-#   titlePanel("Verteilungen visualisieren"),
-#   
-#   sidebarLayout(
-#     
-#     # Sidebar with a slider input
-#     sidebarPanel(
-#       sliderInput("sample_n", "Größe der Stichprobe", 1, 800, 164),
-#       selectInput("Eigenschaft", "Streuung, Schiefe & Modalität:",
-#                    choices = c("große Streuung" = "große Streuung",
-#                                "kleine Streuung" = "kleine Streuung",
-#                                "Bimodalität" = "Bimodalität",
-#                                "Rechtsschiefe" = "Rechtsschiefe")),
-#       selectInput(
-#         "plottype",
-#         "Art der Visualisierung",
-#         c("Histogramm" = "Histogramm",
-#           "Dotplot" = "Dotplot",
-#           "Densityplot" = "Densityplot",
-#           "Violinplot" = "Violinplot",
-#           "Sinaplot" = "Sinaplot",
-#           "Jitterplot" = "Jitterplot",
-#           "Boxplot" = "Boxplot",
-#           "Errorbarplot" = "Errorbarplot"))
-#       ),
-#  
-#       
-#   mainPanel(
-#       uiOutput("plotUI")
-#   )
-#   )
-# )
-# 
-# 
-# server <- function(input, output, session) {
-#   # bs_themer()
-#   # adapt data to input
-#   data_subsetted <- reactive({
-#     tibble(`kleine Streuung` = rbeta(input$sample_n, 30, 10)*15,
-#            `große Streuung` = rbeta(input$sample_n, 9, 3)*15,
-#            `Bimodalität` = c(rbeta(floor(input$sample_n/2), 38, 15)*15,
-#                              rbeta(ceil(input$sample_n/2), 28, 35)*15),
-#            `Rechtsschiefe` = rbeta(input$sample_n, 2, .5)*15) %>%
-#       gather(Variable, Notenpunkte)%>%
-#       mutate(dummy = 1) %>%
-#       filter(Variable == input$Eigenschaft) %>%
-#       sample_n(input$sample_n) %>%
-#       mutate(Note = (Notenpunkte - 7.5) * (-6 / 15) + 4)
-#   })
-#   
-#   # adapt plot title to input
-#   subtitle_reactive <- reactive({
-#     if(input$Eigenschaft == "große Streuung")
-#       sr <- "Verteilung mit vglw. großer Streuung"
-#     if(input$Eigenschaft == "kleine Streuung")
-#       sr <- "Verteilung mit vglw. kleiner Streuung"
-#     if(input$Eigenschaft == "Bimodalität")
-#       sr <- "Bimodale Verteilung"
-#     if(input$Eigenschaft == "Rechtsschiefe")
-#       sr <- "Rechtsschiefe Verteilung"
-#     return(sr)
-#   })
-#   
-#   output$plot <- renderPlot({
-#     
-#     
-#     if (input$plottype == "Dotplot")
-#       plot <-
-#         ggplot(data_subsetted(), aes(x = Note)) +
-#         geom_dotplot(
-#           method = "histodot",
-#           binwidth = .1,
-#           right = F, # intervalls cloed to the left
-#           #dotsize = .5,
-#           fill = "#8cd000",
-#           color = "#8cd000"
-#         ) +
-#         theme_minimal(base_size = 18) +
-#         labs(
-#           title = "Dotplot",
-#           subtitle = paste(subtitle_reactive()),
-#           y = "Anzahl Schüler*innen"
-#         ) +
-#         xlim(.5, 6.5)
-#     
-#     if (input$plottype == "Histogramm")
-#       plot <-
-#         ggplot(data_subsetted(), aes(x = Note)) +
-#         geom_histogram(
-#           binwidth = .5,
-#           fill = "#8cd000",
-#           color = "#8cd000"
-#         ) +
-#         theme_minimal(base_size = 18) +
-#         labs(
-#           title = "Histogramm",
-#           subtitle = paste(subtitle_reactive()),
-#           y = "Anzahl Schüler*innen"
-#         ) +
-#         xlim(.5, 6.5)
-#     
-#     if (input$plottype == "Boxplot")
-#       plot <-
-#         ggplot(data_subsetted(), 
-#                aes(y = Note, x = dummy)) + 
-#         geom_boxplot(color = "#8cd000",
-#                      fill = "#8cd00020") + 
-#         coord_flip() +
-#         labs(
-#           title = "Boxplot",
-#           subtitle = paste(subtitle_reactive()),
-#           x = ""
-#         ) +
-#         ylim(1, 6) +
-#         xlim(0, 2)+
-#         theme_minimal(base_size = 18) +
-#         theme(axis.text.y = element_blank())
-#   
-#     if (input$plottype == "Jitterplot")
-#       plot <-
-#         ggplot(data_subsetted(), aes(x = Note, y = dummy)) + 
-#         geom_jitter(color = "#8cd000") + 
-#         labs(title = "Jitterplot",
-#              subtitle = paste(subtitle_reactive()),
-#              y = "") + 
-#         ylim(0,2) +
-#         xlim(1,6)+
-#         theme_minimal(base_size = 18) + 
-#         theme(axis.text.y = element_blank())
-#     
-#     if (input$plottype == "Densityplot")
-#       plot <-
-#         ggplot(data_subsetted(), aes(x = Note)) + 
-#         geom_density(color = "#8cd000",
-#                      fill = "#8cd00020") + 
-#         labs(title = "Densityplot",
-#              subtitle = paste(subtitle_reactive()),
-#              y = "") + 
-#         #ylim(0,2) +
-#         xlim(1,6)+
-#         theme_minimal(base_size = 18) + 
-#         theme(axis.text.y = element_blank())
-#     
-#     if (input$plottype == "Violinplot")
-#       plot <-
-#         ggplot(data_subsetted(), aes(x = Note, y = dummy)) + 
-#         geom_violin(color = "#8cd000",
-#                     fill = "#8cd00020") + 
-#         labs(title = "Violinplot",
-#              subtitle = paste(subtitle_reactive()),
-#              y = "") + 
-#         ylim(0,2) +
-#         xlim(1,6)+
-#         theme_minimal(base_size = 18) + 
-#         theme(axis.text.y = element_blank())
-#     
-#     if (input$plottype == "Sinaplot")
-#       plot <-
-#         ggplot(data_subsetted(), aes(x = Note, y = dummy)) + 
-#         ggforce::geom_sina(color = "#8cd000") + 
-#         labs(title = "Sinaplot",
-#              subtitle = paste(subtitle_reactive()),
-#              y = "") + 
-#         ylim(0,2) +
-#         xlim(1,6)+
-#         theme_minimal(base_size = 18) + 
-#         theme(axis.text.y = element_blank())
-#     
-#     if (input$plottype == "Errorbarplot")
-#       plot <-
-#         ggplot(data_subsetted(), aes(y=Note, x = dummy)) + 
-#         stat_summary(fun.data = mean_sdl, 
-#                      geom = "linerange", 
-#                      fun.args = list(mult = 1), 
-#                      width = 1.3,
-#                      color = "#8cd000") + 
-#         stat_summary(fun.y = mean, 
-#                      geom = "point",
-#                      color = "#8cd000",
-#                      size = 3) + 
-#         coord_flip() +
-#         labs(title = "Errorbarplot",
-#              subtitle = paste(subtitle_reactive()),
-#              x = "") + 
-#         ylim(1,6)+
-#         theme_minimal(base_size = 18) +
-#         theme(axis.text.y = element_blank())
-#     
-#     return(plot)
-#   })
-#   
-#   output$plotUI <- renderUI({
-#     plotOutput("plot", 
-#                height = case_when(input$plottype == "Dotplot" ~ "400px",
-#                                   input$plottype == "Histogramm" ~ "400px",
-#                                   input$plottype == "Boxplot" ~ "200px",
-#                                   input$plottype == "Jitterplot" ~ "300px",
-#                                   input$plottype == "Densityplot" ~ "400px",
-#                                   input$plottype == "Violinplot" ~ "330px",
-#                                   input$plottype == "Sinaplot" ~ "330px",
-#                                   input$plottype == "Errorbarplot" ~ "200px")
-#     )
-#   })
-# }
-# 
-# thematic_shiny()
-# shinyApp(ui = ui, server = server)
-```
+library(shiny)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(Hmisc)
+library(bslib)
+ 
+ 
+ 
+ ui <- fluidPage(
+    theme = bs_theme(
+  #    heading_font = font_google("Source Sans Pro"),
+  #    base_font = font_google("Source Sans Pro"),
+      preset = "shiny",
+  #   bg = "#ffffff",
+  #   fg = "#000",
+     primary = "#8cd000"
+      ),
+    
+   titlePanel("Verteilungen visualisieren"),
+   
+   sidebarLayout(
+     
+     # Sidebar with a slider input
+     sidebarPanel(
+       sliderInput("sample_n", "Größe der Stichprobe", 1, 800, 164),
+       selectInput("Eigenschaft", "Streuung, Schiefe & Modalität:",
+                    choices = c("große Streuung" = "große Streuung",
+                                "kleine Streuung" = "kleine Streuung",
+                                "Bimodalität" = "Bimodalität",
+                                "Rechtsschiefe" = "Rechtsschiefe")),
+     selectInput(
+       "plottype",
+       "Art der Visualisierung",
+       c("Histogramm" = "Histogramm",
+         "Dotplot" = "Dotplot",
+         "Densityplot" = "Densityplot",
+         "Violinplot" = "Violinplot",
+         "Sinaplot" = "Sinaplot",
+         "Jitterplot" = "Jitterplot",
+         "Boxplot" = "Boxplot",
+         "Errorbarplot" = "Errorbarplot"))
+     ),
 
-<iframe id="VerteilungenDarstellen" src="https://shinylive.io/r/app/#h=0&code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAHQgBsBLAIwCcoWBPACgGcALBhA4BKWo1btuAcymo6RUgCZR9Zm05cAJnI4sV49d1INNu-WslcAEjAY8C5iRtJ84MKMYdiLGpj3EqtEEQAK4MAAQAPAC04QBmdGGaAApQUnBctOHZLm5w4QC84X4A+rnwmRDhAMTZ2a5QmoJSJXEkpIXx7SVSRERSdBnUYADKRCEsBPkjUBA84cksRMPCuFm1dUxQPHCt7Z1tZD19A0Oj45PTs-OLy2CrWXXhqCxwOx1Fw-yCHMNrVRtilJOsNqnFwRC-us6nFgZ8wNUAAzIqFVOovBjuTgghEADgImmRiOGjzqDzRjx4JjgWxYABkoBxxqRKk9STVwiNqbTwgB3BgucJQcL+akscKCVAhUjsqmaGnsVIQOB0VlPEWMeUsACSEClLK+sDkuwgf3CwwA4iwAG8AffyWs5nj4LyITDgZoAjLhwrjkT7PQA2AAs5PVIpVcAIpF1+syYAAogx0nMCHwoHEZXhzaNSK8QiEIFIfSM0ww4HF8gAycIAWSImigjFIABPSIhUeGu+G00QGFN5kUCPGpEt7U784WpMMcaOiOORnm4AWi53u+uN3VhgBrQaCaZLlfTsA43dwfcT5dTteb2-h4YAIUxDabArbM-hT5gL+b77w7LvQDhiwKM+FIHh7AECsPRPeEQLTcDIPLSsVjDdUdkGaNY2lNV7zAOQFFIDhUBg-5u2GABBFgOkdAA1OwQlfKk4BYa9-zRHt4ysOxSH6NgYBgD8c24nheNHWBBPYjdhgAEQUAisxxOTSAUm8u1kigqSI1TYJzGTNIFYj5CzMj12GeiiEYPVjKE8yGEsyUbKkszRkENAnJxLloB00zyLAAApAVyBYHScUC0hgp8gD1UfIgAA9Qs-eKoo49TExYJYWFpRKcwTDKiCy9gdOEFRwzDaLHncQQlRVXC6jCAB5aU42GBSAFVtRWR5SvCFRAlNOYWIANxYqJYjiQto3siAuElaUfWZfUfR2CDpuEcIQEeWpSnKFiuB62pGjQGiPGFXiJT1aVHkbUgoBKHgQj8OAIrgTQxvCV4oCmkauE21LjCYJhBi4AADM8L0XScixBzosueqBZsu0gABIeCNQYSggH0AGZEQDRFhAAKk9ABWXzuxBucF0PKcYaKOHbsR-VUfRk0fQAThxonSfJrsQa-H831IOnwmHBmEYSPoWCZ6UWZgY1MYAemUHHcQDEnubJ6LAPXcWuCmBhVTmlG0fljGIGV1ZwkUNXwmxjXiY13nwxB+CwIgstoJFvXjblhWsetn0MAd0n1oAUgAPjD6KpA8Vxpdo9gGCgIG4B9AA5BQKClCBt3IYRI+j1LshgaUPAyTQQgEjhOk9cOo+iuJDeCrhE5YZPU8KIpfaTFNIIzUh66L8NTf9mWTdZzGh+i0vbvILhM-IToF6zy7c6X2IAHZg-Wwnwi4aJA3CRXwlD8IAGpwlDR4AF8eq2oVG1QDoFPCYxSEGN+iAu-VKUe9+MafW+vkGIH04BfWMD9P6TwGBxHHsjXumk0wDy7jmKmB4obHh6k8Hg4pQHmRYuQQ2U5wi2A6ENAYvIMDhHQeKSGV5Vw0FSrA+BiDUzpkzKgnce5lSXiPF1YuIo8GxAIdRc8iQiykIFOEChdAqHhHBsqOhNNGHshYT3ZMSCOEfE-M+Rsv4szYLqLg96j49FNnyLRQh4i2JqLgRovuyDOEFDgqBRCnsUL3GiiY-BYA3buKgpWcIVixHENUalV4pAJgzVwT1O+jxHiLVlq-UBrwIBamSMZX67IcnMLiPvX2CltL5BcXpeSTkjHZBSdEbWNDZBZJundB6T0XqaH2j6KAbwuBxU6IvOAJUL61PSEQGAJRNDlIUHVcM8AXANhxAIUSDYFBqXDEwQQ-JNCCiKBgb0tTsjtykGBToAAxH0tRBDBSGk2Og8wCDyFel-N+rhwiDEzHsmo4zwIMAAF4lPCMHZ2Twm50DoDiao+JCQomct2Yg8hxTwnBQSIkJJBHZHWufWpu0Si2AgJiJsXAtg7Huj8v5npcTotqXQFOPApnqgAX82SEyTLvOafSzoqBtjz1ZQKQB4DgH7TQt2Gu8IKIQG+VAPgoLSx8AAD+DBYITQQypTRMO7BS1F4Q4qMBgFwAF4RAw71yTA-J8CinERKfCESYl+KSUqc8YyY0hn1MmY0+6j13jkDaVbTpNKelFD6QMjFGrhmjIWda2AtKnhrIgBsrZ-ytYauyMC0FCKIXIuhV2WFBUwVpqhbU9V3YsU4rxaqQluwqS-NruSwZGqqV+EjXUNllqeJ8Qkis9C-8eV-I5aJDI3KP67CAZAjIJVAV1GFTmUV4rJWcjTHKliiqIDKpRWqmt3YtWYl1WTfVhrUp2IKUjZGZqSJcLAA+ZKFTorVKdQpLQp03UtM9e080ibww+q4BOvpPo-XhErtXQNL7uwhpKEwC9kys3wpzIiyFxIM06yTYbFNUHc2IkULB9FgHM1S00K0RgqB9prq7HWml7ym05nPQlJyY7sj9s-kUHtXLO0DpKEOhgP1R3vJ-SSVVXYC1dg4Nqrg3p9V8fDBunVeNrbCCDYW1w8BsWCBLQS7Y5aSVVtE3SuTGQoBxTsBgcgcVSAYAnZGeARwgazG3AKhJeSD3M2PRanM4VIqXsEde4NzqWSuuaR616z730-q-eECdf6YAiAw0MuAIySgACsgp7QgzmpFUKIu1upVwMjwxnMsRSneWj3bOV9qY7yiBbGR2Co3BO7jqWhWCbxsoQjYnBPekDNJzFWmFO4vcKWlTxLK1FDJTVrsu0uA6b0wZozJnBhmdICBqludrN7ts6a4yxTT36TmIZYqV6HUxBvQ0+9PnnpPu9V0wLWcAORei-KTbRF9aWWzam5LsHqO3mTUlmDaGVgX0w+GYjGWu1KQMtpKj7zjHFYK723gEOWN8uHQK1746cTfcvrU6oAnN31Y008cTQncCtZk8NjrxbuvKaJRW0l1bUcapG2Nng+m4CGeM50UzFBZsWYWyVI1dRYF2eSat81p6LJWW2253bNSPO3u8+647fnTu+t6VnH0IWq5hcu8GqLoyhr2SsvduFH302I-XO9p7n30M-cpelzLYBheOWWXB7s+X2WFeh0welsPSvsYq+uKrNB7gW41RjiTuAGuE6a5ulrbWafE8U6TstfXKdDfDLT3T9OJvM6KKz8z82rNc6W8avnKMHOnq8u5e3dr3NAc83e26D7fNeo6WdxX5BledFC+FgPVe2iXEQIgYDVJoB68e8h57KPfvqn+9b0vuXbxO-oy7-LHv+UcdfUj+EY-alB64Fjxr6pceR7D5pvInWlPx4p+pzvRO8ijdTwzpnU28jZ8s4ttky3CkC5PaU4YeVMrZVc+GSvLsGQKXQ7GXVpfzLpDgAoILH9dvdXR3OeN1ASSwCaCADARpToeAWYe6TQOgH0MHDcENHEKyFiWYdIM0Ag43QsDAdgKQQcF5HiLgUuOgD4U+K2Sg7sWNPgWuDAbGI3dcRLU3dNJPdCRAh6ZAjQVAjPUhcBAODgoAzXHEVAPsMgdtHWQQkfGDNQwCc-IobGEQp4YgAqHDBIBgfDbHOoSfQHeEH-AqP-e3fgufZ4BfGHVjL3fgrjP3Aw8dZrfHKPWTY-EnfFM-NTAbKndra-OnO-SbFnabNnObZ-PPV-J4SJaJLgBSOJe+NEJJIvYyDqd6NJLUDqbJVKBSJqFSHCVqKjcfTcVwZMI5IcXrXkVwGad-QiQXL-MAZSUKAAPxzGDGRFQDim0Pgw3DaIig6ObUWXEgEhnD6OGAGMRCGJGNGO7HGLW06Io16JzDQyWOGId1WLGMPWL06OyxCg8nmLAFxj2JWMOPVHWMmL0mByMnt3CEuMWOWIOLuK7AeM-3hFt2sleMuOxlxk+P4O+N+Mc2GGnwuJzBBJuK+O+PuOOI-yhPSl-yKlhOGF2M+KMUyNoBvmCHKA8H7HugECEH2loG+CEAonQC4DCE6DCGWmGlGiKB2BYBGj0FoDABvgAF0gA" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" frameborder="0" ></iframe>
+     
+ mainPanel(
+     uiOutput("plotUI")
+ )
+ )
+)
+
+
+server <- function(input, output, session) {
+ # bs_themer()
+ # adapt data to input
+ data_subsetted <- reactive({
+   tibble(`kleine Streuung` = rbeta(input$sample_n, 30, 10)*15,
+          `große Streuung` = rbeta(input$sample_n, 9, 3)*15,
+          `Bimodalität` = c(rbeta(floor(input$sample_n/2), 38, 15)*15,
+                            rbeta(ceil(input$sample_n/2), 28, 35)*15),
+          `Rechtsschiefe` = rbeta(input$sample_n, 2, .5)*15) %>%
+     gather(Variable, Notenpunkte)%>%
+     mutate(dummy = 1) %>%
+     filter(Variable == input$Eigenschaft) %>%
+     sample_n(input$sample_n) %>%
+     mutate(Note = (Notenpunkte - 7.5) * (-6 / 15) + 4)
+ })
+ 
+ # adapt plot title to input
+ subtitle_reactive <- reactive({
+   if(input$Eigenschaft == "große Streuung")
+     sr <- "Verteilung mit vglw. großer Streuung"
+   if(input$Eigenschaft == "kleine Streuung")
+     sr <- "Verteilung mit vglw. kleiner Streuung"
+   if(input$Eigenschaft == "Bimodalität")
+     sr <- "Bimodale Verteilung"
+   if(input$Eigenschaft == "Rechtsschiefe")
+     sr <- "Rechtsschiefe Verteilung"
+   return(sr)
+ })
+ 
+ output$plot <- renderPlot({
+   
+   
+   if (input$plottype == "Dotplot")
+     plot <-
+       ggplot(data_subsetted(), aes(x = Note)) +
+       geom_dotplot(
+         method = "histodot",
+         binwidth = .1,
+         right = F, # intervalls cloed to the left
+         #dotsize = .5,
+         fill = "#8cd000",
+         color = "#8cd000"
+       ) +
+       theme_minimal(base_size = 18) +
+       labs(
+         title = "Dotplot",
+         subtitle = paste(subtitle_reactive()),
+         y = "Anzahl Schüler*innen"
+       ) +
+       xlim(.5, 6.5)
+   
+   if (input$plottype == "Histogramm")
+     plot <-
+       ggplot(data_subsetted(), aes(x = Note)) +
+       geom_histogram(
+         binwidth = .5,
+         fill = "#8cd000",
+         color = "#8cd000"
+       ) +
+       theme_minimal(base_size = 18) +
+       labs(
+         title = "Histogramm",
+         subtitle = paste(subtitle_reactive()),
+         y = "Anzahl Schüler*innen"
+       ) +
+       xlim(.5, 6.5)
+   
+   if (input$plottype == "Boxplot")
+     plot <-
+       ggplot(data_subsetted(), 
+              aes(y = Note, x = dummy)) + 
+       geom_boxplot(color = "#8cd000",
+                    fill = "#8cd00020") + 
+       coord_flip() +
+       labs(
+         title = "Boxplot",
+         subtitle = paste(subtitle_reactive()),
+         x = ""
+       ) +
+       ylim(1, 6) +
+       xlim(0, 2)+
+       theme_minimal(base_size = 18) +
+       theme(axis.text.y = element_blank())
+ 
+   if (input$plottype == "Jitterplot")
+     plot <-
+       ggplot(data_subsetted(), aes(x = Note, y = dummy)) + 
+       geom_jitter(color = "#8cd000") + 
+       labs(title = "Jitterplot",
+            subtitle = paste(subtitle_reactive()),
+            y = "") + 
+       ylim(0,2) +
+       xlim(1,6)+
+       theme_minimal(base_size = 18) + 
+       theme(axis.text.y = element_blank())
+   
+   if (input$plottype == "Densityplot")
+     plot <-
+       ggplot(data_subsetted(), aes(x = Note)) + 
+       geom_density(color = "#8cd000",
+                    fill = "#8cd00020") + 
+       labs(title = "Densityplot",
+            subtitle = paste(subtitle_reactive()),
+            y = "") + 
+       #ylim(0,2) +
+       xlim(1,6)+
+       theme_minimal(base_size = 18) + 
+       theme(axis.text.y = element_blank())
+   
+   if (input$plottype == "Violinplot")
+     plot <-
+       ggplot(data_subsetted(), aes(x = Note, y = dummy)) + 
+       geom_violin(color = "#8cd000",
+                   fill = "#8cd00020") + 
+       labs(title = "Violinplot",
+            subtitle = paste(subtitle_reactive()),
+            y = "") + 
+       ylim(0,2) +
+       xlim(1,6)+
+       theme_minimal(base_size = 18) + 
+       theme(axis.text.y = element_blank())
+   
+   if (input$plottype == "Sinaplot")
+     plot <-
+       ggplot(data_subsetted(), aes(x = Note, y = dummy)) + 
+       ggforce::geom_sina(color = "#8cd000") + 
+       labs(title = "Sinaplot",
+            subtitle = paste(subtitle_reactive()),
+            y = "") + 
+       ylim(0,2) +
+       xlim(1,6)+
+       theme_minimal(base_size = 18) + 
+       theme(axis.text.y = element_blank())
+   
+   if (input$plottype == "Errorbarplot")
+     plot <-
+       ggplot(data_subsetted(), aes(y=Note, x = dummy)) + 
+       stat_summary(fun.data = mean_sdl, 
+                    geom = "linerange", 
+                    fun.args = list(mult = 1), 
+                    color = "#8cd000") + 
+       stat_summary(fun.y = mean, 
+                    geom = "point",
+                    color = "#8cd000",
+                    size = 3) + 
+       coord_flip() +
+       labs(title = "Errorbarplot",
+            subtitle = paste(subtitle_reactive()),
+            x = "") + 
+       ylim(1,6)+
+       theme_minimal(base_size = 18) +
+       theme(axis.text.y = element_blank())
+   
+   return(plot)
+ })
+ 
+ output$plotUI <- renderUI({
+   plotOutput("plot", 
+              height = case_when(input$plottype == "Dotplot" ~ "400px",
+                                 input$plottype == "Histogramm" ~ "400px",
+                                 input$plottype == "Boxplot" ~ "200px",
+                                 input$plottype == "Jitterplot" ~ "300px",
+                                 input$plottype == "Densityplot" ~ "400px",
+                                 input$plottype == "Violinplot" ~ "330px",
+                                 input$plottype == "Sinaplot" ~ "330px",
+                                 input$plottype == "Errorbarplot" ~ "200px")
+   )
+ })
+}
+
+shinyApp(ui = ui, server = server)
+```
+-->
+
+<iframe id="VerteilungenDarstellen" src="https://shinylive.io/r/app/#h=0&code=NobwRAdghgtgpmAXGKAHVA6ASmANGAYwHsIAXOMpMAGwEsAjAJykYE8AKAZwAtaJWAlAB0IdJiw4BzSampFSAJmGiGzNuwAms1o2Vi1HUrQ069qiewASMWpwJnx60tzgwoR+yP0X6nMcoACESCIEICAV1oAgB4AWgCAM2pIjQAFKEk4dmCA3OdXOACAXgDfAH18+GzQgIBiXNyXKA0+STKEklJixM6yySIiSWosoTAAZSJwxgJCsagITgDUxiJRgVwc+ob6KE44ds7ujrI+gaGR8cnp2fnF5dWwdZyGgNRGOD2uktGePlZRjY1LalSTdUa1BKQqEAzYNBKg75gWoABlRMJqDTetDcbDBSIAHAQNKjkaNng0nhjnpxjHAdowADJQViTUjVF5hF71Ma0+kBADutGcASgAT8tMYAT4qHCpHJYt5LHSEDg1HZHLFdA0cEYAEkIDK2T9YLJ9hAAUEwABxRgAN4A+4VtZKxh5uG8iPQ4BaAIy4AL41H+n0ANgALJSNWLVXACKR9YbsmAAKK0TILAjcKAJOV4S2u97hcIQST+saZ2hwBKFABkAQAskQNFA6KQACekRDoqM9jmZoi0GaLEoEJOSFaOgIFuBFkujPHjoiT6ezyTd3sbzeWgDWwz4s1IheLa7AeN3cH3U8PM+P663945owAQtimy2hR354iXzA363P3g8oPveoxYLG3CkJwdi8FW3qnoiYGZpB0GVtWayRi8ezDHGCayuqj5gLI8ikKwqBwYCUajAAgowXTOgEABqtjhO+NI6regEYi8o6jJYtikIMzAwDAX6WnxnACeOsAiZxvajAAIvIRG5niimkMpd4agpFA0iRGnwZa8k6UKpFyLmFE9qMTFEHQBpmaJVm0DZ0r2bJlnjHwaCuXiPLQPpFmUWAABSQrkIw+l4iFpBhf5QENM+RAAB4Rd+SWxVxBHJowKyMPSKWWllOV5a5AiBC8lLysEbh8Mqqr4bkkQAPKyomozKQAqrqazBIEyjKCIIh7IwABuOoxPECTFnGTkQOw0qyv6rKGv6exQTNAgBCAwT1OUlQ6uwgT1M0aB0e4ooCVKBqysEzakFAZScOEvhwNFcAaONATvFA02jewW0YkY9D0MM7AAAbnpeK7HqD3S5S9UBzVdpAACScCawxlBA-oAMzIsGyICAAVD6ACsAVRqDi7Lteq4wyUcN3Yjhqo+jZr+gAnDjROk+TGqgz+f4fqQdMBKODMI0kAyMEzsoszApqYwA9EoOP4sGJPc2TcXARq4vsDMtBqvNKNo-LGMQMr6wBAoasBNjGvExrvMcqDiEQVBFawSLevG3LCtY9b-oYA7pMbQApAAfGH8qSO4LjSwxLC0FAwNwP6ABy8gUDKEDbuQAiR9HGUwLK7hZBo4TCaw3Q+uHUfygkhthewieMMnqfFCUvupum0HZqQddFxypv+zLJus5jg-yiXd3kOwmfkN089Z1dueL-EADswcbYTATsLEIYBIrAShwEADUAQRsEAC+gTbSKzaoF0ykBEYpDDK-RCXYawSPfQb8Yy+j9QocRPpwG+kYX6-0Gi0ASGPZGPcdKZn7p3S0VMDxHjnI8eUnBJSgKsjqcghtjwBBsF0YaQx+QYACOgl0NMOLPFgfAxBGYsw5lQaMCGKoryYJPGVBouCPoENoheZIJZSFCgCBQ6gVCAhcLGlDLBjC4HdzTEgthXxvyvmbP+XM-DciCPwWAAWOjCgMUIaIhhGImGqN7sg9hRQELgWQp7NC2CMqGPiKBZxHsYLVkYhY4hSiMTvFIFMWauDAi32CMEJassX6gPeBAZ0qQzJ-WeBk6xCQ96+2UnpQojjDJKRKvKBJsQ4rSGUpoM6D0nqfHIBoA6-ooAfHYIlboC84ClXPhUuARAYBlA0MU+Q9UOTwGcE2PEvAJJNnkJpDk9A+CCg0MKEoGA-Ta0+mmCC3QABi-p6h8DCsNFs1BFgEDkG9T+r8XABGGDmTZtQhmQVoAALwKQEYOzs4SG2oHiWohJiRojclGYgchJSIgBUSEkZIMq5A2mfOKe0yg2AgNiFs7Adh7Aem8j5Pp8QIritQFOnBRkvAAR8hSwzzKbL-hS7oqBdhzzpUKQB4DgEHQwlGauiIqIQFeVAbgfzyzcAAD-DEYITPgKpzRgDioSuFAREp0BgOwL5AQQzb0yTA7J8C8mkQKYicSkkhIyX0a8My40KkyDSbde6f96lvSaSKVp7SSidO6YixVmR+llGmSa2AZLthLOMKsz5WtFW5EbtQP5kLAUwpBRqMFRAIWWihUC0kcrFUKqjMi1F6K1RYv2DSd5NcCU9MVcS3wQa8isspWAY1glpLzMwk9elJRGUSSyCy9++wgGQKyKVb5uQeWWj5QKoVU5Mzip1FKiAMrYVRhzRqZV2I1Vkw1VqqkWSclI2RvqsiHDjFpRKRlMp1qql2tqc9V6jSrabI5C00lo7On+jdQECuVdPWcg5D6gZ9AT0jOTam8E8bgXDq3NG2NaawPIgUJmhFP7uJSw0O0OgqADoVqjFW0lmz22WifIBmlkaxRtrrQypl3ayO9rKP22gv0h2bPfWSLNS6sMalYCq9gfoNXLo5Ku1VeNrYCC9bmlw8AUV8ALZi3YxbcVlr4+S8TWQoCJVsBgcgiVSAYFHTGeAJxgbzG3JymJO69VmXyUeqKMVT0cnPd6m1Iyr0Opeg051T62kdKzv6Udn6YCCEQ7031AArUK+1gP-Ng2sc+SGGg4fYPh0Y1mdTpS3D2j+HbKNcGo2yiB9HB1ct7KOljgXFWcbXXjJQ7H+Ncb9CGETSLlOSbRW4QtsmcWlpKPi0rYmCjsFU+pzT2ndPDH06QMohnc4me3Tq3dzMD2GsMsZPStmXj2ajJU21NSXO3vc66rz+cesaj-YM5bHAItxuheBh9G4oORau3BhDMWiUkoS+RxERkFgmVS5udLHzO3Mpy329lA7OUQYaMVuVjxnuKtqOVwTuAquiZXbV3A9XkccjzVJ1rMnsUlrxeWi+jW+sDc4BpuAWmdPdD0xQcbk3jOlW1bkWBc34kWYNUe6ytl9LmvW8dxzbJnN1Nc06q2Hn32voCL5yu-nv1BYGcNJytl9Y2RTfdjNLb7x3cuxm+D0WieVte4lsAXOXJzMTT2P7FGu3Zf-nW2jIP8tg5u1LvE+vYsjq45VxTDQBPcbRw1xVWOWsYqLR1gnR3MfKf62psnQ2qclBpwZ4lU3GczeZ7q3J7PD2FNGL5Ly5veeWriBerbd1r2Orvc0-b7rvOu5KH5gLMONuSA6NcRAiATs0mgCr8F6uE2R5ePF43+efsbit5lm3f2Hd5YY4VnskP3dxXh+wb31WXh+7q4H3rEn8047D-jhTzeNR7Rj4Ninw3qejdpxNlPDP+HKNZyjBbR7CopuKoX0pxfykOcvdt4Xu2YurSrARQku76jecuiqEk7gtSwkFgk0EAGAdq3Q8A8wD0Gg1A-oLuPYf6eItkOo8wmQFo2BUYCBGALAkgw4dy-E7AJc1AXwJ896JGm4yyYaPoGA2M4OG4F2MGD2S+UBs8sBOIHAZBo6qBAcJBx2fSMAeIqAA4ZAmu94PBoGfBFuwEh+JQ2Mg+DQxAKaqGSQtAGGPuuQw+72BU2U7+LAY+vYE+rwWW0+dGc+XBSqbu0OBu3KqO6OxOu+2Ooe7WGhJ8hO3hKmse5OlOI2BQyeRm028UISL04S7AykUSd8oQcSz+ZknUH0SSzonU6SGIykzU6keEbUrkWBzBLwLg2yDBBA7W-ILgs0WexEHOueYAakEUAAfpaGGKiKgIlIoTrL2I0dFM0UavxE2sJPOJ0aMN0ciL0f0QMVGEMZZi0YRslN5FMWAPBrMX0WoQsYMXui-i0cluFOsZaLjNsfMXsS8EsSMUtl9itubgEBsTMXMbsVcRqDcTnoiKbnZI8RsdjLjK8c4e8Z8Ytnnp5B0WcYCTscCVcaCa-hYblFYacaMFsa8fwskSINfANAsLwPwFROgOwJEN0JECtDqKNKmkNBSQIGANfAALpAA" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" frameborder="0" ></iframe>
 </center>
 <style>
 #VerteilungenDarstellen {height: 500px; width: 900px; margin-top: 0.0cm; border:0px;}
 </style>
 
+<!--
+<iframe id="VerteilungenDarstellen" src="https://sammerk.shinyapps.io/Verteilungen-darstellen" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" id="iframe_container" frameborder="0" ></iframe>
+</center>
+<style>
+#VerteilungenDarstellen {height: 500px; width: 900px; margin-top: 0.0cm; border:0px;}
+</style>
+-->
 
 ## Cheat Sheet - Plottypes {.center}
 ![](img/Plottypes_embedded.svg){width="140%" fig-align="center"}
