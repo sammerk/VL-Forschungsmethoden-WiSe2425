@@ -287,7 +287,7 @@ $$IQR = \left[\text{Quartil 1}; \text{Quartil 3} \right] $$
 
 
 ## Aufgaben
-> Bearbeiten Sie mehrere Versionen der **Aufgaben 3.4 - 3.6** unter [ogy.de/mvl](https://ogy.de/mvl)
+> Bearbeiten Sie mehrere Versionen der **Aufgaben 3.4 - 3.5** unter [ogy.de/mvl](https://ogy.de/mvl)
 
 
 
