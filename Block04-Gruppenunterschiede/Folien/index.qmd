@@ -1127,6 +1127,10 @@ tibble(Effektstärke = c("U₁", "U₃", "Cohen's d", "Cliff's d"),
 > Bearbeiten Sie mehrere Versionen der **Aufgaben 4.5** unter [ogy.de/mvl](https://ogy.de/mvl)
 
 
+## Vergleich der Effektstärken {.center}
+> Bearbeiten Sie mehrere Versionen der **Aufgaben 4.6** unter [ogy.de/mvl](https://ogy.de/mvl)
+
+
 ## Literatur
 <style>
 div.callout {border-left-color: #8cd000 !important;
