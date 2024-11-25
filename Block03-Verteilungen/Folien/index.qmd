@@ -568,7 +568,7 @@ shinyApp(ui = ui, server = server)
 ## Cheat Sheet - Plottypes {.center}
 ![](img/Plottypes_embedded.svg){width="140%" fig-align="center"}
 
-## Aufgaben
+## Aufgaben {.center}
 > Bearbeiten Sie mehrere Versionen der **Aufgaben 3.8 - 3.10** unter [ogy.de/mvl](https://ogy.de/mvl)
 
 
