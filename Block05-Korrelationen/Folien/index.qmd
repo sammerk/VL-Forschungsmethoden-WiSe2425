@@ -1,7 +1,7 @@
 ---
 title: "Korrelationen" 
 subtitle: "für ordinale & bivariat-normalverteilte Variablen"
-author: "Samuel Merk"
+author: "Samuel Merk & Cora Parrisius"
 format: 
   revealjs:
     auto-stretch: false

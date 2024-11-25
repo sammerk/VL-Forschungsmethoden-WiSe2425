@@ -1,7 +1,7 @@
 ---
 title: "Vorlesung"
 subtitle: "Einführung in qualitative und quantitative Forschungsmethoden"
-author: "Samuel Merk"
+author: "Samuel Merk & Cora Parrisius"
 format: 
   revealjs:
     include-in-header:

@@ -1,6 +1,6 @@
 ---
 title: "Grundbegriffe quantitativ-empirischer Methodologie"
-author: "Samuel Merk"
+author: "Samuel Merk & Cora Parrisius"
 format: 
   revealjs:
     controls: true

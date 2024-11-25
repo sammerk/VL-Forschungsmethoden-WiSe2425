@@ -1,6 +1,6 @@
 ---
 title: "Grundbegriffe der Messtheorie"
-author: "Samuel Merk"
+author: "Samuel Merk & Cora Parrisius"
 format: 
   revealjs:
     controls: true

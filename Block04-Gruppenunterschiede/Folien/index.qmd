@@ -1,7 +1,7 @@
 ---
 title: "Effektstärken" 
 subtitle: "für Gruppenmittelwertsunterschiede"
-author: "Samuel Merk"
+author: "Samuel Merk & Cora Parrisius"
 format: 
   revealjs:
     auto-stretch: false

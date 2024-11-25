@@ -1,6 +1,6 @@
 ---
 title: "Beschreibung von Verteilungen"
-author: "Samuel Merk"
+author: "Samuel Merk & Cora Parrisius"
 format: 
   revealjs:
     html-math-method: mathjax
