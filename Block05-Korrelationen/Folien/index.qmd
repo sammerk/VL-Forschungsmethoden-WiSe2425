@@ -273,7 +273,7 @@ morph_svg(
 
 . . .
 
-> [Rangbindungen]{style="color: #0fa5d7;"} (engl. »[ties]{style="color: #0fa5d7;"}«) nennt man Paarvergleiche, bei denen (mindestens) eine der beiden Variablen gleich ausgeprägt ist. Kendall's $\tau_A$, verhält sich problematisch wenn  Rangbindungen vorliegen.
+> [Rangbindungen]{style="color: #0fa5d7;"} (engl. »[ties]{style="color: #0fa5d7;"}«) nennt man Paarvergleiche, bei denen (genau) eine der beiden Variablen gleich ausgeprägt ist. Kendall's $\tau_A$, verhält sich problematisch wenn  Rangbindungen vorliegen.
 
 
 ## Definition Kendall's $\tau_{\mathrm{b}}$ {.smaller .center}
@@ -281,8 +281,8 @@ Gelten folgende Bezeichnungen
 
 * $n_{\mathrm{K}}$: Anzahl aller konkordanten Paare
 * $n_{\mathrm{D}}$: Anzahl aller diskordanten Paare
-* $n_{\mathrm{B}(X)}$: Anzahl aller Rangbindungen in der Variable X
-* $n_{\mathrm{B}(Y)}$: Anzahl aller Rangbindungen in der Variable Y
+* $n_{\mathrm{B}(X)}$: Anzahl aller Rangbindungen einzig in der Variable X
+* $n_{\mathrm{B}(Y)}$: Anzahl aller Rangbindungen einzig in der Variable Y
 
 ist Kendall's $\tau_{\mathrm{b}}$ wie folgt definiert
 $$\tau_{\mathrm{b}} \left(X,Y \right)=\frac{n_{\mathrm{K}}-n_{\mathrm{D}}}{\sqrt{\left(n_{\mathrm{K}}+n_{\mathrm{D}}+n_{\mathrm{B}(X)}\right) \cdot\left(n_{\mathrm{K}}+n_{\mathrm{D}}+n_{\mathrm{B}(Y)}\right)}}$$

@@ -13,7 +13,8 @@ library(tidyverse)
 source("https://survey.ph-karlsruhe.de/PISA22-einschaetzen/?act=oPAF8Chqu9MExebQDfSwWC2F&vQuality&rScript")
 ds <- 
   ds %>%
-  filter(lubridate::ymd_hms(STARTED) > lubridate::ymd_hms("2021-10-16 16:00:00"))
+  filter(lubridate::ymd_hms(STARTED) > 
+             lubridate::ymd_hms("2021-10-16 16:00:00"))
 ```
 
 # Wie viele Studis haben mitgemacht?
