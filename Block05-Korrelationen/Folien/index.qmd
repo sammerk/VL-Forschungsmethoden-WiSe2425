@@ -380,7 +380,7 @@ vis_tau(
 
 ```
 
-$\tau_{\mathrm{b}} \left(X,Y \right)=\frac{\color{#8cd000}{n_{\mathrm{K}}}-\color{#d77d00}{n_{\mathrm{D}}}}{\sqrt{\left(\color{#8cd000}{n_{\mathrm{K}}}+\color{#d77d00}{n_{\mathrm{D}}}+\color{#ffffff}{n_{\mathrm{B}(X)}}\right) \cdot\left(\color{#8cd000}{n_{\mathrm{K}}}+\color{#d77d00}{n_{\mathrm{D}}}+\color{#0FA5D7}{n_{\mathrm{B}(Y)}}\right)}} = \frac{\color{#8cd000}{10} - \color{#d77d00}{1}}{\sqrt{\left(\color{#8cd000}{10} + \color{#d77d00}{1} +\color{#ffffff}{2} \right) \cdot \left( \color{#8cd000}{10} + \color{#d77d00}{1} +\color{#0FA5D7}{2} \right)}} \approx .69$
+$\tau_{\mathrm{b}} \left(X,Y \right)=\frac{\color{#8cd000}{n_{\mathrm{K}}}-\color{#d77d00}{n_{\mathrm{D}}}}{\sqrt{\left(\color{#8cd000}{n_{\mathrm{K}}}+\color{#d77d00}{n_{\mathrm{D}}}+\color{#11111180}{n_{\mathrm{B}(X)}}\right) \cdot\left(\color{#8cd000}{n_{\mathrm{K}}}+\color{#d77d00}{n_{\mathrm{D}}}+\color{#0FA5D7}{n_{\mathrm{B}(Y)}}\right)}} = \frac{\color{#8cd000}{10} - \color{#d77d00}{1}}{\sqrt{\left(\color{#8cd000}{10} + \color{#d77d00}{1} +\color{#11111180}{2} \right) \cdot \left( \color{#8cd000}{10} + \color{#d77d00}{1} +\color{#0FA5D7}{2} \right)}} \approx .69$
 
 
 ## Eigenschaften Kendall's $\tau_{\mathrm{b}}$  {.center}
